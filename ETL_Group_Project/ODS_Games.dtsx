@@ -1,0 +1,878 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/15/2025 8:04:18 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KILLIAN-PC"
+  DTS:CreatorName="KILLIAN-PC\killi"
+  DTS:DTSID="{D3B55D3D-CE8A-4371-B4EB-E570EDD8AD4A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{29FED493-97AC-49D7-869C-B729E6BBD651}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FCA59F0E-26BA-4C5B-83AF-1245325C1BC7}"
+      DTS:ObjectName="localhost.ETL_project_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{FCA59F0E-26BA-4C5B-83AF-1245325C1BC7}localhost.ETL_project_ODS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - ODS_Games"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{1ba83f59-fb83-4c5e-81f8-affe046a3d4f}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - ODS_Games"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - ODS_Games\DCNV - Resizing"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Conversion de données"
+              name="DCNV - Resizing"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Games\DCNV - Resizing.Inputs[Entrée de conversion de données]"
+                  name="Entrée de conversion de données">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[gameid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="title"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[title]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[platform]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="platform"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[platform]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[genre_rework]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="genre_rework"
+                      lineageId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie de colonne dérivée].Columns[genre_rework]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données]"
+                  exclusionGroup="1"
+                  name="Sortie de conversion de données"
+                  synchronousInputId="Package\DFT - ODS_Games\DCNV - Resizing.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of gameid]"
+                      name="Copy of gameid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[gameid]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of title]"
+                      name="Copy of title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[title]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of platform]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of platform]"
+                      name="Copy of platform"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[platform]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of genre_rework]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of genre_rework]"
+                      name="Copy of genre_rework"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie de colonne dérivée].Columns[genre_rework]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de conversion de données"
+                  synchronousInputId="Package\DFT - ODS_Games\DCNV - Resizing.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Games\DER - Replace Genres"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER - Replace Genres"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Games\DER - Replace Genres.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Games\DER - Replace Genres.Inputs[Entrée de colonne dérivée].Columns[genres]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="genres"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[genres]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS_Games\DER - Replace Genres.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie de colonne dérivée].Columns[genre_rework]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie de colonne dérivée].Columns[genre_rework]"
+                      name="genre_rework"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[REPLACE]([REPLACE]([REPLACE]([REPLACE](#{Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[genres]},"'",""),"]",""),"[",""),", ","|")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE(REPLACE(REPLACE(genres,"'",""),"]",""),"[",""),", ","|")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS_Games\DER - Replace Genres.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="OLE_DST - ODS_Games"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[ODS_Games]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].Columns[Copy of gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Copy of gameid"
+                      externalMetadataColumnId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of gameid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].Columns[Copy of title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of title"
+                      externalMetadataColumnId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].ExternalColumns[title]"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of title]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].Columns[Copy of platform]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of platform"
+                      externalMetadataColumnId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].ExternalColumns[platform]"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of platform]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].Columns[Copy of genre_rework]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of genre_rework"
+                      externalMetadataColumnId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].ExternalColumns[genres]"
+                      lineageId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of genre_rework]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="gameid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].ExternalColumns[platform]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="platform" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB].ExternalColumns[genres]"
+                      dataType="wstr"
+                      length="255"
+                      name="genres" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="OLE_SRC - STA_Games"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[STA_Games]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Connections[OleDbConnection]"
+                  connectionManagerID="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_STA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].ExternalColumns[gameid]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[gameid]"
+                      name="gameid"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].ExternalColumns[title]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[title]"
+                      name="title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[platform]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].ExternalColumns[platform]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[platform]"
+                      name="platform"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[genres]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].ExternalColumns[genres]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].Columns[genres]"
+                      name="genres"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].ExternalColumns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gameid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].ExternalColumns[platform]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="platform" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB].ExternalColumns[genres]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="genres" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[gameid]"
+                      name="gameid" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[title]"
+                      name="title" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[platform]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[platform]"
+                      name="platform" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[genres]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[genres]"
+                      name="genres" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - ODS_Games.Paths[Sortie de colonne dérivée]"
+              endId="Package\DFT - ODS_Games\DCNV - Resizing.Inputs[Entrée de conversion de données]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - ODS_Games\DER - Replace Genres.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - ODS_Games.Paths[Sortie de conversion de données]"
+              endId="Package\DFT - ODS_Games\OLE_DST - ODS_Games.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de conversion de données"
+              startId="Package\DFT - ODS_Games\DCNV - Resizing.Outputs[Sortie de conversion de données]" />
+            <path
+              refId="Package\DFT - ODS_Games.Paths[Sortie de source OLE DB]"
+              endId="Package\DFT - ODS_Games\DER - Replace Genres.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\DFT - ODS_Games\OLE_SRC - STA_Games.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate ODS_Games"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{257fb55d-701a-4bd6-91ab-43854d65c20b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate ODS_Games"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FCA59F0E-26BA-4C5B-83AF-1245325C1BC7}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.ODS_Games " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{62ce37ce-6c0e-4b30-a86d-0664aeb7dde8}"
+      DTS:From="Package\SQL - Truncate ODS_Games"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\DFT - ODS_Games" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DFT - ODS_Games"
+          TopLeft="85,186" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\SQL - Truncate ODS_Games"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="171.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - ODS_Games">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204,42"
+          Id="Package\DFT - ODS_Games\OLE_DST - ODS_Games"
+          TopLeft="376.5,378.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\DFT - ODS_Games\OLE_SRC - STA_Games"
+          TopLeft="408.5,116.5" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\DFT - ODS_Games\DER - Replace Genres"
+          TopLeft="443.5,213.530612244898" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\DFT - ODS_Games\DCNV - Resizing"
+          TopLeft="398.5,294.5" />
+        <EdgeLayout
+          Id="Package\DFT - ODS_Games.Paths[Sortie de source OLE DB]"
+          TopLeft="510,158.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,55.030612244898"
+              Start="0,0"
+              End="29,47.530612244898">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.515306122449" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.515306122449"
+                    Point2="0,27.515306122449"
+                    Point3="4,27.515306122449" />
+                  <mssgle:LineSegment
+                    End="25,27.515306122449" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,27.515306122449"
+                    Point2="29,27.515306122449"
+                    Point3="29,31.515306122449" />
+                  <mssgle:LineSegment
+                    End="29,47.530612244898" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS_Games.Paths[Sortie de conversion de données]"
+          TopLeft="479,336.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS_Games.Paths[Sortie de colonne dérivée]"
+          TopLeft="539,255.530612244898">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.5,38.969387755102"
+              Start="0,0"
+              End="-59.5,31.469387755102">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.484693877551" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.484693877551"
+                    Point2="0,19.484693877551"
+                    Point3="-4,19.484693877551" />
+                  <mssgle:LineSegment
+                    End="-55.5,19.484693877551" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.5,19.484693877551"
+                    Point2="-59.5,19.484693877551"
+                    Point3="-59.5,23.484693877551" />
+                  <mssgle:LineSegment
+                    End="-59.5,31.469387755102" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="We removed some unessary marks, but some gender like &quot;shoot them up&quot; &#xA;is between quote cose of law."
+          ParentId="Package\DFT - ODS_Games"
+          FontInfo="{assembly:Null}"
+          Size="425,56"
+          Id="65e741a2-8f44-4a39-b961-50310837a21f"
+          TopLeft="648,212" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS_Games\OLE_DST - ODS_Games">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS_Games\OLE_SRC - STA_Games">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

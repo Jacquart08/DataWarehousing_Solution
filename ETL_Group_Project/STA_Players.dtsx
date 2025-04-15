@@ -11,26 +11,38 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{8E45D88B-1008-404C-AFB3-9D72C3E00988}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{EE2FC09A-896D-4125-82D1-D98E38761B76}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2BE460BE-A496-4BF9-A119-32B6D0066B42}"
+      DTS:ObjectName="localhost.ETL_project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{2BE460BE-A496-4BF9-A119-32B6D0066B42}localhost.ETL_project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Players]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{E7125321-C11B-47F4-BD95-18DDB8D84BF0}"
-      DTS:ObjectName="Flat File Connection Manager">
+      DTS:DTSID="{A0CE6301-A077-4C3C-A279-E3D51313A551}"
+      DTS:ObjectName="Players">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
-          DTS:LocaleID="1033"
+          DTS:LocaleID="1036"
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\FAVOUR\Desktop\ETL_Group_Project\playstation\players.csv">
+          DTS:ConnectionString="C:\Users\killi\Documents\Projet ETL\TEST\Data\players.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +51,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="playerid"
-              DTS:DTSID="{CBF63A9A-C3E8-4203-9313-C2F8D910C3B9}"
+              DTS:DTSID="{7A28ABD8-A365-419F-8225-281483E1C046}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +60,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="nickname"
-              DTS:DTSID="{99620A9E-BD27-428F-A074-DAC06B917E19}"
+              DTS:DTSID="{D696619A-8BEC-4D89-8EDD-3713CB99B799}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +69,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country"
-              DTS:DTSID="{ECC4562F-A67F-4E25-85EE-258B3A98C117}"
+              DTS:DTSID="{F152AE49-70FE-4864-B803-E64921E414C8}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -85,7 +97,7 @@
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="1036"
               name="FF_SRC - Players"
               usesDispositions="true"
               version="1">
@@ -102,8 +114,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - STA Players\FF_SRC - Players.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Players]"
+                  connectionManagerRefId="Package.ConnectionManagers[Players]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -152,6 +164,28 @@
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - STA Players\FF_SRC - Players.Outputs[Flat File Source Output].Columns[nickname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - STA Players\FF_SRC - Players.Outputs[Flat File Source Output].ExternalColumns[nickname]"
+                      length="50"
+                      lineageId="Package\DFT - STA Players\FF_SRC - Players.Outputs[Flat File Source Output].Columns[nickname]"
+                      name="nickname"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
@@ -223,7 +257,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Players_STA]</property>
+                  name="OpenRowset">[dbo].[STA_Players]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -266,8 +300,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - STA Players\OLE_DST - STA.Connections[OleDbConnection]"
-                  connectionManagerID="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_STA]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -295,6 +329,14 @@
                       cachedName="country"
                       externalMetadataColumnId="Package\DFT - STA Players\OLE_DST - STA.Inputs[OLE DB Destination Input].ExternalColumns[country]"
                       lineageId="Package\DFT - STA Players\FF_SRC - Players.Outputs[Flat File Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\DFT - STA Players\OLE_DST - STA.Inputs[OLE DB Destination Input].Columns[nickname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nickname"
+                      externalMetadataColumnId="Package\DFT - STA Players\OLE_DST - STA.Inputs[OLE DB Destination Input].ExternalColumns[nickname]"
+                      lineageId="Package\DFT - STA Players\FF_SRC - Players.Outputs[Flat File Source Output].Columns[nickname]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -310,6 +352,12 @@
                       dataType="str"
                       length="50"
                       name="country" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - STA Players\OLE_DST - STA.Inputs[OLE DB Destination Input].ExternalColumns[nickname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nickname" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -363,7 +411,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [ETL_STA]. [dbo].[Players_STA]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [ETL_project]. [dbo].[STA_Players]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -378,51 +426,39 @@
       DTS:To="Package\DFT - STA Players" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\DFT - STA Players"
-          TopLeft="77.6923080776217,169.032254762692" />
+          TopLeft="92.6923080776217,168.032254762692" />
         <NodeLayout
-          Size="191.2,41.6"
+          Size="191,42"
           Id="Package\SQL - Truncate Players"
           TopLeft="81.9230774005314,60.8387096520207" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="177.523077400531,102.438709652021">
+          TopLeft="177.307692739077,102.838709652021">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-15.4307693229096,66.5935451106713"
+              EndConnector="0,65.1935451106713"
               Start="0,0"
-              End="-15.4307693229096,59.0935451106713">
+              End="0,57.6935451106713">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.2967725553356" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.2967725553356"
-                    Point2="0,33.2967725553356"
-                    Point3="-4,33.2967725553356" />
-                  <mssgle:LineSegment
-                    End="-11.4307693229096,33.2967725553356" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-11.4307693229096,33.2967725553356"
-                    Point2="-15.4307693229096,33.2967725553356"
-                    Point3="-15.4307693229096,37.2967725553356" />
-                  <mssgle:LineSegment
-                    End="-15.4307693229096,59.0935451106713" />
+                    End="0,57.6935451106713" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -440,13 +476,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\DFT - STA Players\FF_SRC - Players"
-          TopLeft="96.1538482479444,78.8387072899464" />
-        <NodeLayout
-          Size="158.4,41.6"
+          Size="158,42"
           Id="Package\DFT - STA Players\OLE_DST - STA"
           TopLeft="105.384617679747,194.580639268804" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DFT - STA Players\FF_SRC - Players"
+          TopLeft="96.1538482479444,78.8387072899464" />
         <EdgeLayout
           Id="Package\DFT - STA Players.Paths[Flat File Source Output]"
           TopLeft="181.769232963846,120.438707289946">

@@ -11,16 +11,28 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{D45C734D-B823-4561-BDD8-4AA418DE73B4}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{D2AFC60F-0396-4493-B4CD-3A8AD44B2186}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7294FBC1-19E8-403C-8FAA-9E860A376465}"
+      DTS:ObjectName="localhost.ETL_project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{7294FBC1-19E8-403C-8FAA-9E860A376465}localhost.ETL_project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Prices]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{AD1AF521-AE79-4786-B6C1-E652E186F6E7}"
-      DTS:ObjectName="Flat File Connection Manager">
+      DTS:ObjectName="Prices">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +42,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\FAVOUR\Desktop\ETL_Group_Project\playstation\prices.csv">
+          DTS:ConnectionString="C:\Users\killi\Documents\Projet ETL\TEST\Data\prices.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +51,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gameid"
-              DTS:DTSID="{CD856FD5-42AE-46E1-BF1C-0ED9610688F0}"
+              DTS:DTSID="{E6C556DD-5C5E-4E1A-9706-5C34059737CA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +60,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="usd"
-              DTS:DTSID="{0C34CF67-8C3F-498E-A510-BAE8CC86FF28}"
+              DTS:DTSID="{BF117457-0688-4819-87E1-038F20BD217C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +69,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="eur"
-              DTS:DTSID="{C0D00E7D-F3BE-481E-AE09-BEF56ACBFE65}"
+              DTS:DTSID="{9FDD6247-5B5F-4F0E-93B5-2ADE226BB6BC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +78,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gbp"
-              DTS:DTSID="{3547F6E4-CAF5-48E6-BEBC-2AA086D1C1AB}"
+              DTS:DTSID="{C4DFC2B6-7003-4BA3-9DEF-16B10FB7B12D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +87,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="jpy"
-              DTS:DTSID="{59F4D125-2D81-458B-B013-5E55B6C54D45}"
+              DTS:DTSID="{B5CB6471-5CBF-4D91-B545-4EB1FAF3CBAC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +96,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="rub"
-              DTS:DTSID="{11CC9AF9-E330-48B9-8E5D-E1BC7DCB6847}"
+              DTS:DTSID="{37216300-16E6-4A4B-92FF-7AC5CA731777}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +105,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="date_acquired"
-              DTS:DTSID="{2ABCF793-0777-47BB-B62B-1F18C2E54CF5}"
+              DTS:DTSID="{09663DB6-D163-4DFE-BA4C-5E983278D6FC}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -138,8 +150,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - STA Prices\FF_SRC - Prices.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Prices]"
+                  connectionManagerRefId="Package.ConnectionManagers[Prices]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -305,7 +317,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Prices_STA]</property>
+                  name="OpenRowset">[dbo].[STA_Prices]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -348,8 +360,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - STA Prices\OLE_DST - STA.Connections[OleDbConnection]"
-                  connectionManagerID="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_STA]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -457,7 +469,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [ETL_STA]. [dbo].[Prices_STA]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [ETL_project]. [dbo].[STA_Prices]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -472,23 +484,23 @@
       DTS:To="Package\DFT - STA Prices" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\DFT - STA Prices"
           TopLeft="77.6923080776217,169.032254762692" />
         <NodeLayout
-          Size="184.8,41.6"
+          Size="185,42"
           Id="Package\SQL - Truncate Prices"
           TopLeft="60,60" />
         <EdgeLayout
@@ -522,13 +534,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="160,41.6"
-          Id="Package\DFT - STA Prices\FF_SRC - Prices"
-          TopLeft="96.1538482479444,78.8387072899464" />
-        <NodeLayout
-          Size="158.4,41.6"
+          Size="158,42"
           Id="Package\DFT - STA Prices\OLE_DST - STA"
           TopLeft="81.153847921265,186.193542748597" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\DFT - STA Prices\FF_SRC - Prices"
+          TopLeft="96.1538482479444,78.8387072899464" />
         <EdgeLayout
           Id="Package\DFT - STA Prices.Paths[Flat File Source Output]"
           TopLeft="176.153848247944,120.438707289946">
