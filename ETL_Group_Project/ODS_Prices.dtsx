@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{8ABE98CD-46A4-4535-870C-9CEE772245A1}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{DB1E0413-E10B-4449-AD16-FA50CDC21A60}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -46,20 +46,20 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT - ODS_Prices\Colonne dérivée"
+              refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
               description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="Colonne dérivée"
+              name="DER - Replace NULL by 0"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée]"
                   description="Entrée de la transformation de colonnes dérivées"
                   name="Entrée de colonne dérivée">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[eur]"
+                      refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée].Columns[eur]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -71,19 +71,19 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée]"
                   description="Sortie par défaut de la transformation de colonnes dérivées"
                   exclusionGroup="1"
                   name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  synchronousInputId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[eur_clean]"
+                      refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée].Columns[eur_clean]"
                       dataType="wstr"
                       errorOrTruncationOperation="Calcul"
                       errorRowDisposition="FailComponent"
                       length="102"
-                      lineageId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[eur_clean]"
+                      lineageId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée].Columns[eur_clean]"
                       name="eur_clean"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -104,23 +104,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée]"
                   description="Sortie d'erreur de la transformation de colonnes dérivées"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  synchronousInputId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -129,11 +129,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS_Prices\Destination OLE DB"
+              refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
               description="Destination OLE DB"
-              name="Destination OLE DB"
+              name="OLE_DST - ODS_Price"
               usesDispositions="true"
               version="4">
               <properties>
@@ -186,7 +186,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - ODS_Prices\Destination OLE DB.Connections[OleDbConnection]"
+                  refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.ETL_project_ODS]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
@@ -194,50 +194,50 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB]"
                   errorOrTruncationOperation="Insérer"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[gameid]"
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].Columns[gameid]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="gameid"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
                       lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]" />
                     <inputColumn
-                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[date_acquired]"
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].Columns[date_acquired]"
                       cachedDataType="dbTimeStamp"
                       cachedName="date_acquired"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
                       lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]" />
                     <inputColumn
-                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[eur_clean]"
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].Columns[eur_clean]"
                       cachedDataType="wstr"
                       cachedLength="102"
                       cachedName="eur_clean"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
-                      lineageId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[eur_clean]" />
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
+                      lineageId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée].Columns[eur_clean]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="gameid" />
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
                       dataType="numeric"
                       name="eur"
                       precision="18"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
                       dataType="dbTimeStamp"
                       name="date_acquired" />
                   </externalMetadataColumns>
@@ -245,22 +245,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de destination OLE DB"
-                  synchronousInputId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  synchronousInputId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -426,12 +426,12 @@
           <paths>
             <path
               refId="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée]"
-              endId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              endId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB]"
               name="Sortie de colonne dérivée"
-              startId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+              startId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée]" />
             <path
               refId="Package\DFT - ODS_Prices.Paths[Sortie de source OLE DB]"
-              endId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              endId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée]"
               name="Sortie de source OLE DB"
               startId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB]" />
           </paths>
@@ -485,33 +485,33 @@
         <NodeLayout
           Size="217,42"
           Id="Package\SQL - Truncate ODS_Prices"
-          TopLeft="182.5,56.5" />
+          TopLeft="181.5,55.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte]"
-          TopLeft="291,98.5">
+          TopLeft="290,97.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.5,35"
+              EndConnector="12.5,36"
               Start="0,0"
-              End="11.5,27.5">
+              End="12.5,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.5" />
+                    End="0,14" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="4,17.5" />
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
                   <mssgle:LineSegment
-                    End="7.5,17.5" />
+                    End="8.5,18" />
                   <mssgle:CubicBezierSegment
-                    Point1="7.5,17.5"
-                    Point2="11.5,17.5"
-                    Point3="11.5,21.5" />
+                    Point1="8.5,18"
+                    Point2="12.5,18"
+                    Point3="12.5,22" />
                   <mssgle:LineSegment
-                    End="11.5,27.5" />
+                    End="12.5,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -533,12 +533,12 @@
           Id="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices"
           TopLeft="408.5,45.5" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\DFT - ODS_Prices\Destination OLE DB"
+          Size="194,42"
+          Id="Package\DFT - ODS_Prices\OLE_DST - ODS_Price"
           TopLeft="428.5,217.5" />
         <NodeLayout
-          Size="159,42"
-          Id="Package\DFT - ODS_Prices\Colonne dérivée"
+          Size="207,42"
+          Id="Package\DFT - ODS_Prices\DER - Replace NULL by 0"
           TopLeft="419.5,117.5" />
         <EdgeLayout
           Id="Package\DFT - ODS_Prices.Paths[Sortie de source OLE DB]"
@@ -546,9 +546,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.5,30"
+              EndConnector="15.5,30"
               Start="0,0"
-              End="-8.5,22.5">
+              End="15.5,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -557,15 +557,15 @@
                   <mssgle:CubicBezierSegment
                     Point1="0,11"
                     Point2="0,15"
-                    Point3="-4,15" />
+                    Point3="4,15" />
                   <mssgle:LineSegment
-                    End="-4.5,15" />
+                    End="11.5,15" />
                   <mssgle:CubicBezierSegment
-                    Point1="-4.5,15"
-                    Point2="-8.5,15"
-                    Point3="-8.5,19" />
+                    Point1="11.5,15"
+                    Point2="15.5,15"
+                    Point3="15.5,19" />
                   <mssgle:LineSegment
-                    End="-8.5,22.5" />
+                    End="15.5,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -576,30 +576,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée]"
-          TopLeft="499,159.5">
+          TopLeft="524.25,159.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18,58"
+              EndConnector="0,58"
               Start="0,0"
-              End="18,50.5">
+              End="0,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="14,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14,29"
-                    Point2="18,29"
-                    Point3="18,33" />
-                  <mssgle:LineSegment
-                    End="18,50.5" />
+                    End="0,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -625,7 +613,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS_Prices\Destination OLE DB">
+    design-time-name="Package\DFT - ODS_Prices\OLE_DST - ODS_Price">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

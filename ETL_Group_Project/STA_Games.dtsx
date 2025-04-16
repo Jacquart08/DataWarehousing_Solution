@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{9F9EDA38-FBC8-427D-B367-51EC450E6C5F}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{E67E469D-8B3D-4CFD-871E-E2DB904C8D16}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -118,6 +118,18 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{1E7CA61D-404E-4BBD-9393-C39FBD10F8E3}localhost.ETL_project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E91ED6AC-9FAE-4754-BCA8-CA4CE4914AD2}"
+      DTS:ObjectName="localhost.ETL_project_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{E91ED6AC-9FAE-4754-BCA8-CA4CE4914AD2}localhost.ETL_project_STA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -397,8 +409,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - STA Games\OLE_DST - STA.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project_STA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project_STA]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -522,7 +534,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [ETL_project]. [dbo].[STA_Games]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [ETL_project_STA]. [dbo].[STA_Games]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
