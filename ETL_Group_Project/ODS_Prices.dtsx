@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{13054B1D-CADA-4EFD-9060-27A67FC8727A}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{8ABE98CD-46A4-4535-870C-9CEE772245A1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -46,779 +46,20 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT - ODS_Prices\ALL - Rejects"
-              componentClassID="Microsoft.UnionAll"
-              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
-              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
-              name="ALL - Rejects"
-              version="1">
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1]"
-                  name="Unir tout entrée 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1].Columns[gameid]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="gameid"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1].Columns[eur]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="eur"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[eur]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1].Columns[date_acquired]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="date_acquired"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorCode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorColumn]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1].Columns[RejectDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="RejectDate"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[RejectDate]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDate]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1].Columns[RejectPckgandTask]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="RejectPckgandTask"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[RejectPckgandTask]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectPckgandTask]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1].Columns[Reject Column]"
-                      cachedDataType="wstr"
-                      cachedLength="6"
-                      cachedName="Reject Column"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[Reject Column]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[Reject Column]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1].Columns[RejectDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="RejectDescription"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDescription]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1]"
-                  hasSideEffects="true"
-                  name="Entrée Union All 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1].Columns[gameid]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="gameid"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1].Columns[eur]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="eur"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[eur]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1].Columns[date_acquired]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="date_acquired"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      lineageId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorCode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      lineageId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorColumn]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1].Columns[RejectDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="RejectDate"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectDate]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDate]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1].Columns[RejectPckgandTask]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="RejectPckgandTask"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectPckgandTask]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectPckgandTask]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1].Columns[RejectDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="RejectDescription"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDescription]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1].Columns[RejectColumn]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="RejectColumn"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[Reject Column]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2]"
-                  hasSideEffects="true"
-                  name="Entrée Union All 2">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2].Columns[gameid]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="gameid"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2].Columns[eur]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="eur"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[eur]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2].Columns[date_acquired]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="date_acquired"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorCode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorColumn]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2].Columns[RejectDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="RejectDate"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectDate]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDate]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2].Columns[RejectPckgandTask]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="RejectPckgandTask"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectPckgandTask]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectPckgandTask]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2].Columns[RejectDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="RejectDescription"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDescription]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2].Columns[RejectColumn]"
-                      cachedDataType="wstr"
-                      cachedLength="13"
-                      cachedName="RejectColumn"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="ID de traçabilité de colonne de sortie"
-                          name="OutputColumnLineageID">#{Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[Reject Column]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 3]"
-                  dangling="true"
-                  hasSideEffects="true"
-                  name="Entrée Union All 3">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1]"
-                  name="Unir tout sortie 1">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[gameid]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[gameid]"
-                      name="gameid" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[eur]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[eur]"
-                      name="eur" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[date_acquired]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[date_acquired]"
-                      name="date_acquired" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorCode]"
-                      name="ErrorCode" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[ErrorColumn]"
-                      name="ErrorColumn" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDate]"
-                      name="RejectDate" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectPckgandTask]"
-                      dataType="wstr"
-                      length="100"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectPckgandTask]"
-                      name="RejectPckgandTask" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[Reject Column]"
-                      dataType="wstr"
-                      length="13"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[Reject Column]"
-                      name="Reject Column" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDescription]"
-                      dataType="wstr"
-                      length="80"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDescription]"
-                      name="RejectDescription" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS_Prices\DCNV - DateAcquired"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Conversion de données"
-              name="DCNV - DateAcquired"
+              refId="Package\DFT - ODS_Prices\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Inputs[Entrée de conversion de données]"
-                  name="Entrée de conversion de données">
+                  refId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Inputs[Entrée de conversion de données].Columns[date_acquired]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="date_acquired"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie de conversion de données]"
-                  exclusionGroup="1"
-                  name="Sortie de conversion de données"
-                  synchronousInputId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie de conversion de données].Columns[Copy of date_acquired]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie de conversion de données].Columns[Copy of date_acquired]"
-                      name="Copy of date_acquired"
-                      truncationRowDisposition="RedirectRow">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie d'erreur de conversion de données]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de conversion de données"
-                  synchronousInputId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS_Prices\DCNV - GameID"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Conversion de données"
-              name="DCNV - GameID"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS_Prices\DCNV - GameID.Inputs[Entrée de conversion de données]"
-                  name="Entrée de conversion de données">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - GameID.Inputs[Entrée de conversion de données].Columns[gameid]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="gameid"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie de conversion de données]"
-                  exclusionGroup="1"
-                  name="Sortie de conversion de données"
-                  synchronousInputId="Package\DFT - ODS_Prices\DCNV - GameID.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie de conversion de données].Columns[Copy of gameid]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie de conversion de données].Columns[Copy of gameid]"
-                      name="Copy of gameid"
-                      truncationRowDisposition="RedirectRow">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie d'erreur de conversion de données]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de conversion de données"
-                  synchronousInputId="Package\DFT - ODS_Prices\DCNV - GameID.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS_Prices\DCNV - Resizing"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Conversion de données"
-              name="DCNV - Resizing"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS_Prices\DCNV - Resizing.Inputs[Entrée de conversion de données]"
-                  name="Entrée de conversion de données">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[Copy of gameid]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Copy of gameid"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie de conversion de données].Columns[Copy of gameid]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[Copy of eur]"
-                      cachedDataType="numeric"
-                      cachedName="Copy of eur"
-                      cachedPrecision="18"
-                      cachedScale="2"
-                      lineageId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie de conversion de données].Columns[Copy of eur]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[Copy of date_acquired]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Copy of date_acquired"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie de conversion de données].Columns[Copy of date_acquired]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données]"
-                  exclusionGroup="1"
-                  name="Sortie de conversion de données"
-                  synchronousInputId="Package\DFT - ODS_Prices\DCNV - Resizing.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of Copy of gameid]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of Copy of gameid]"
-                      name="Copy of Copy of gameid"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie de conversion de données].Columns[Copy of gameid]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of Copy of eur]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of Copy of eur]"
-                      name="Copy of Copy of eur"
-                      precision="18"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie de conversion de données].Columns[Copy of eur]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of Copy of date_acquired]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of Copy of date_acquired]"
-                      name="Copy of Copy of date_acquired"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie de conversion de données].Columns[Copy of date_acquired]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de conversion de données"
-                  synchronousInputId="Package\DFT - ODS_Prices\DCNV - Resizing.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS_Prices\DCNV -Eur"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Conversion de données"
-              name="DCNV -Eur"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS_Prices\DCNV -Eur.Inputs[Entrée de conversion de données]"
-                  name="Entrée de conversion de données">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV -Eur.Inputs[Entrée de conversion de données].Columns[eur]"
+                      refId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[eur]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -830,202 +71,56 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie de conversion de données]"
-                  exclusionGroup="1"
-                  name="Sortie de conversion de données"
-                  synchronousInputId="Package\DFT - ODS_Prices\DCNV -Eur.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie de conversion de données].Columns[Copy of eur]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie de conversion de données].Columns[Copy of eur]"
-                      name="Copy of eur"
-                      precision="18"
-                      scale="2"
-                      truncationRowDisposition="RedirectRow">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie d'erreur de conversion de données]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de conversion de données"
-                  synchronousInputId="Package\DFT - ODS_Prices\DCNV -Eur.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="DER - Reject DateAcquired"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Inputs[Entrée de colonne dérivée]"
-                  description="Entrée de la transformation de colonnes dérivées"
-                  name="Entrée de colonne dérivée">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Inputs[Entrée de colonne dérivée].Columns[date_acquired]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="date_acquired"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée]"
+                  refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
                   description="Sortie par défaut de la transformation de colonnes dérivées"
                   exclusionGroup="1"
                   name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Inputs[Entrée de colonne dérivée]">
+                  synchronousInputId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
-                      name="RejectDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectPckgandTask]"
+                      refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[eur_clean]"
                       dataType="wstr"
                       errorOrTruncationOperation="Calcul"
                       errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectPckgandTask]"
-                      name="RejectPckgandTask"
+                      length="102"
+                      lineageId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[eur_clean]"
+                      name="eur_clean"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expression de colonne dérivée"
-                          name="Expression">(DT_WSTR,50)@[System::PackageName] + (DT_WSTR,50)@[System::TaskName]</property>
+                          name="Expression">[REPLACENULL](#{Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]},0)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expression claire de colonne dérivée"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_WSTR,50)@[System::PackageName] + (DT_WSTR,50)@[System::TaskName]</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      length="13"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
-                      name="RejectColumn"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">"date_acquired"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"date_acquired"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
-                      name="RejectDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">"The Value" + (DT_WSTR,51)#{Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]} + "is not a valid value"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"The Value" + (DT_WSTR,51)date_acquired + "is not a valid value"</property>
+                          name="FriendlyExpression">REPLACENULL(eur,0)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie d'erreur de colonne dérivée]"
+                  refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
                   description="Sortie d'erreur de la transformation de colonnes dérivées"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Inputs[Entrée de colonne dérivée]">
+                  synchronousInputId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1034,464 +129,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS_Prices\DER - Reject Eur"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="DER - Reject Eur"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS_Prices\DER - Reject Eur.Inputs[Entrée de colonne dérivée]"
-                  description="Entrée de la transformation de colonnes dérivées"
-                  name="Entrée de colonne dérivée">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Eur.Inputs[Entrée de colonne dérivée].Columns[eur]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="eur"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée]"
-                  description="Sortie par défaut de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS_Prices\DER - Reject Eur.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
-                      name="RejectDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectPckgandTask]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectPckgandTask]"
-                      name="RejectPckgandTask"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">(DT_WSTR,50)@[System::PackageName] + (DT_WSTR,50)@[System::TaskName]</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_WSTR,50)@[System::PackageName] + (DT_WSTR,50)@[System::TaskName]</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      length="3"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectColumn]"
-                      name="RejectColumn"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">"eur"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"eur"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
-                      name="RejectDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">"The Value" + (DT_WSTR,51)#{Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]} + "is not a valid value"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"The Value" + (DT_WSTR,51)eur + "is not a valid value"</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie d'erreur de colonne dérivée]"
-                  description="Sortie d'erreur de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS_Prices\DER - Reject Eur.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS_Prices\DER - Reject Gameid"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="DER - Reject Gameid"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Inputs[Entrée de colonne dérivée]"
-                  description="Entrée de la transformation de colonnes dérivées"
-                  name="Entrée de colonne dérivée">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Inputs[Entrée de colonne dérivée].Columns[gameid]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="gameid"
-                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée]"
-                  description="Sortie par défaut de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS_Prices\DER - Reject Gameid.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[RejectDate]"
-                      name="RejectDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[RejectPckgandTask]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[RejectPckgandTask]"
-                      name="RejectPckgandTask"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">(DT_WSTR,50)@[System::PackageName] + (DT_WSTR,50)@[System::TaskName]</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_WSTR,50)@[System::PackageName] + (DT_WSTR,50)@[System::TaskName]</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[Reject Column]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      length="6"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[Reject Column]"
-                      name="Reject Column"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">"gameid"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"gameid"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée].Columns[RejectDescription]"
-                      name="RejectDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">"The Value" + (DT_WSTR,51)#{Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]} + "is not a valid value"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"The Value" + (DT_WSTR,51)gameid + "is not a valid value"</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie d'erreur de colonne dérivée]"
-                  description="Sortie d'erreur de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\DFT - ODS_Prices\DER - Reject Gameid.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects"
+              refId="Package\DFT - ODS_Prices\Destination OLE DB"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
               description="Destination OLE DB"
-              name="OLE_DST - ADM Technical Rejects"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowset">[dbo].[ADM_TechnicalRejects]</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Commande SQL à exécuter."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le mode utilisé pour accéder à la base de données."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Connections[OleDbConnection]"
-                  connectionManagerID="{E5ABD731-405A-40D7-922A-2970D010D5B9}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_project_ADM]"
-                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB]"
-                  errorOrTruncationOperation="Insérer"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrée de destination OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].Columns[RejectDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="RejectDate"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDate]"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDate]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].Columns[RejectPckgandTask]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="RejectPckgandTask"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectPckgandTask]"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectPckgandTask]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].Columns[RejectDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="RejectDescription"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDescription]"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[RejectDescription]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].Columns[Reject Column]"
-                      cachedDataType="wstr"
-                      cachedLength="13"
-                      cachedName="Reject Column"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectColumn]"
-                      lineageId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1].Columns[Reject Column]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDate]"
-                      dataType="dbTimeStamp"
-                      name="RejectDate" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectPckgandTask]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="RejectPckgandTask" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectColumn]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="RejectColumn" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB].ExternalColumns[RejectDescription]"
-                      dataType="wstr"
-                      length="80"
-                      name="RejectDescription" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Outputs[Sortie d'erreur de destination OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de destination OLE DB"
-                  synchronousInputId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
-              description="Destination OLE DB"
-              name="OLE_DST - ODS_Prices"
+              name="Destination OLE DB"
               usesDispositions="true"
               version="4">
               <properties>
@@ -1544,7 +186,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Connections[OleDbConnection]"
+                  refId="Package\DFT - ODS_Prices\Destination OLE DB.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.ETL_project_ODS]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
@@ -1552,73 +194,73 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB]"
+                  refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
                   errorOrTruncationOperation="Insérer"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB].Columns[prices]"
-                      cachedDataType="wstr"
-                      cachedLength="102"
-                      cachedName="prices"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
-                      lineageId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée].Columns[RejectDate]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB].Columns[Copy of Copy of date_acquired]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Copy of Copy of date_acquired"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of Copy of date_acquired]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB].Columns[Copy of Copy of gameid]"
+                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[gameid]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Copy of Copy of gameid"
-                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
-                      lineageId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of Copy of gameid]" />
+                      cachedName="gameid"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[eur_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="102"
+                      cachedName="eur_clean"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
+                      lineageId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[eur_clean]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="gameid" />
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
-                      dataType="dbTimeStamp"
-                      name="date_acquired" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
+                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
                       dataType="numeric"
                       name="eur"
                       precision="18"
                       scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      name="date_acquired" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Outputs[Sortie d'erreur de destination OLE DB]"
+                  refId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de destination OLE DB"
-                  synchronousInputId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB]">
+                  synchronousInputId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS_Prices\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1783,65 +425,15 @@
           </components>
           <paths>
             <path
-              refId="Package\DFT - ODS_Prices.Paths[Sortie d'erreur de conversion de données]"
-              endId="Package\DFT - ODS_Prices\DER - Reject Gameid.Inputs[Entrée de colonne dérivée]"
-              name="Sortie d'erreur de conversion de données"
-              startId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie d'erreur de conversion de données]" />
-            <path
-              refId="Package\DFT - ODS_Prices.Paths[Sortie d'erreur de conversion de données1]"
-              endId="Package\DFT - ODS_Prices\DER - Reject Eur.Inputs[Entrée de colonne dérivée]"
-              name="Sortie d'erreur de conversion de données"
-              startId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie d'erreur de conversion de données]" />
-            <path
-              refId="Package\DFT - ODS_Prices.Paths[Sortie d'erreur de conversion de données2]"
-              endId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Inputs[Entrée de colonne dérivée]"
-              name="Sortie d'erreur de conversion de données"
-              startId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie d'erreur de conversion de données]" />
-            <path
               refId="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée]"
-              endId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Unir tout entrée 1]"
+              endId="Package\DFT - ODS_Prices\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
               name="Sortie de colonne dérivée"
-              startId="Package\DFT - ODS_Prices\DER - Reject Gameid.Outputs[Sortie de colonne dérivée]" />
-            <path
-              refId="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée1]"
-              endId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 1]"
-              name="Sortie de colonne dérivée"
-              startId="Package\DFT - ODS_Prices\DER - Reject Eur.Outputs[Sortie de colonne dérivée]" />
-            <path
-              refId="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée2]"
-              endId="Package\DFT - ODS_Prices\ALL - Rejects.Inputs[Entrée Union All 2]"
-              name="Sortie de colonne dérivée"
-              startId="Package\DFT - ODS_Prices\DER - Reject DateAcquired.Outputs[Sortie de colonne dérivée]" />
-            <path
-              refId="Package\DFT - ODS_Prices.Paths[Sortie de conversion de données]"
-              endId="Package\DFT - ODS_Prices\DCNV -Eur.Inputs[Entrée de conversion de données]"
-              name="Sortie de conversion de données"
-              startId="Package\DFT - ODS_Prices\DCNV - GameID.Outputs[Sortie de conversion de données]" />
-            <path
-              refId="Package\DFT - ODS_Prices.Paths[Sortie de conversion de données1]"
-              endId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Inputs[Entrée de conversion de données]"
-              name="Sortie de conversion de données"
-              startId="Package\DFT - ODS_Prices\DCNV -Eur.Outputs[Sortie de conversion de données]" />
-            <path
-              refId="Package\DFT - ODS_Prices.Paths[Sortie de conversion de données2]"
-              endId="Package\DFT - ODS_Prices\DCNV - Resizing.Inputs[Entrée de conversion de données]"
-              name="Sortie de conversion de données"
-              startId="Package\DFT - ODS_Prices\DCNV - DateAcquired.Outputs[Sortie de conversion de données]" />
-            <path
-              refId="Package\DFT - ODS_Prices.Paths[Sortie de conversion de données3]"
-              endId="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices.Inputs[Entrée de destination OLE DB]"
-              name="Sortie de conversion de données"
-              startId="Package\DFT - ODS_Prices\DCNV - Resizing.Outputs[Sortie de conversion de données]" />
+              startId="Package\DFT - ODS_Prices\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
             <path
               refId="Package\DFT - ODS_Prices.Paths[Sortie de source OLE DB]"
-              endId="Package\DFT - ODS_Prices\DCNV - GameID.Inputs[Entrée de conversion de données]"
+              endId="Package\DFT - ODS_Prices\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
               name="Sortie de source OLE DB"
               startId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB]" />
-            <path
-              refId="Package\DFT - ODS_Prices.Paths[Unir tout sortie 1]"
-              endId="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects.Inputs[Entrée de destination OLE DB]"
-              name="Unir tout sortie 1"
-              startId="Package\DFT - ODS_Prices\ALL - Rejects.Outputs[Unir tout sortie 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1887,13 +479,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="217,42"
-          Id="Package\SQL - Truncate ODS_Prices"
-          TopLeft="182.5,56.5" />
-        <NodeLayout
           Size="170,42"
           Id="Package\DFT - ODS_Prices"
           TopLeft="217.5,133.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\SQL - Truncate ODS_Prices"
+          TopLeft="182.5,56.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte]"
           TopLeft="291,98.5">
@@ -1935,53 +527,45 @@
     design-time-name="Package\DFT - ODS_Prices">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="198,42"
           Id="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices"
-          TopLeft="425.5,20.5" />
+          TopLeft="408.5,45.5" />
         <NodeLayout
-          Size="199,42"
-          Id="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices"
-          TopLeft="403.5,496.5" />
+          Size="177,42"
+          Id="Package\DFT - ODS_Prices\Destination OLE DB"
+          TopLeft="428.5,217.5" />
         <NodeLayout
-          Size="161,42"
-          Id="Package\DFT - ODS_Prices\DCNV - GameID"
-          TopLeft="422.5,101.5" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\DFT - ODS_Prices\DER - Reject Eur"
-          TopLeft="685.5,190.5" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DFT - ODS_Prices\DER - Reject Gameid"
-          TopLeft="785.5,102.5" />
+          Size="159,42"
+          Id="Package\DFT - ODS_Prices\Colonne dérivée"
+          TopLeft="419.5,117.5" />
         <EdgeLayout
           Id="Package\DFT - ODS_Prices.Paths[Sortie de source OLE DB]"
-          TopLeft="524.5,62.5">
+          TopLeft="507.5,87.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-21.5,39"
+              EndConnector="-8.5,30"
               Start="0,0"
-              End="-21.5,31.5">
+              End="-8.5,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.5" />
+                    End="0,11" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="-4,19.5" />
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="-4,15" />
                   <mssgle:LineSegment
-                    End="-17.5,19.5" />
+                    End="-4.5,15" />
                   <mssgle:CubicBezierSegment
-                    Point1="-17.5,19.5"
-                    Point2="-21.5,19.5"
-                    Point3="-21.5,23.5" />
+                    Point1="-4.5,15"
+                    Point2="-8.5,15"
+                    Point3="-8.5,19" />
                   <mssgle:LineSegment
-                    End="-21.5,31.5" />
+                    End="-8.5,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1990,386 +574,38 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Sortie d'erreur de conversion de données]"
-          TopLeft="583.5,123">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="202,0"
-              Start="0,0"
-              End="194.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="194.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="5.7417578125,5,183.016484375,10.3349609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="134,42"
-          Id="Package\DFT - ODS_Prices\DCNV -Eur"
-          TopLeft="415,205" />
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Sortie de conversion de données]"
-          TopLeft="503,143.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-21,61.5"
-              Start="0,0"
-              End="-21,54">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.75"
-                    Point2="0,30.75"
-                    Point3="-4,30.75" />
-                  <mssgle:LineSegment
-                    End="-17,30.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-17,30.75"
-                    Point2="-21,30.75"
-                    Point3="-21,34.75" />
-                  <mssgle:LineSegment
-                    End="-21,54" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Sortie d'erreur de conversion de données1]"
-          TopLeft="549,226">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="136.5,-14.5"
-              Start="0,0"
-              End="129,-14.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="64.25,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="64.25,0"
-                    Point2="68.25,0"
-                    Point3="68.25,-4" />
-                  <mssgle:LineSegment
-                    End="68.25,-10.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68.25,-10.5"
-                    Point2="68.25,-14.5"
-                    Point3="72.25,-14.5" />
-                  <mssgle:LineSegment
-                    End="129,-14.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.2582421875,1,183.016484375,10.3349609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\DFT - ODS_Prices\DCNV - DateAcquired"
-          TopLeft="410,306" />
-        <NodeLayout
-          Size="213,42"
-          Id="Package\DFT - ODS_Prices\DER - Reject DateAcquired"
-          TopLeft="710,289" />
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Sortie de conversion de données1]"
-          TopLeft="482,247">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="21,59"
-              Start="0,0"
-              End="21,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.5"
-                    Point2="0,29.5"
-                    Point3="4,29.5" />
-                  <mssgle:LineSegment
-                    End="17,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17,29.5"
-                    Point2="21,29.5"
-                    Point3="21,33.5" />
-                  <mssgle:LineSegment
-                    End="21,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Sortie d'erreur de conversion de données2]"
-          TopLeft="596,327">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="114,-17"
-              Start="0,0"
-              End="106.5,-17">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="53,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53,0"
-                    Point2="57,0"
-                    Point3="57,-4" />
-                  <mssgle:LineSegment
-                    End="57,-13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="57,-13"
-                    Point2="57,-17"
-                    Point3="61,-17" />
-                  <mssgle:LineSegment
-                    End="106.5,-17" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-34.5082421875,1,183.016484375,10.3349609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="145,42"
-          Id="Package\DFT - ODS_Prices\ALL - Rejects"
-          TopLeft="1044,216" />
         <EdgeLayout
           Id="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée]"
-          TopLeft="877.5,144.5">
+          TopLeft="499,159.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="239,71.5"
+              EndConnector="18,58"
               Start="0,0"
-              End="239,64">
+              End="18,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.75" />
+                    End="0,25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.75"
-                    Point2="0,35.75"
-                    Point3="4,35.75" />
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
                   <mssgle:LineSegment
-                    End="235,35.75" />
+                    End="14,29" />
                   <mssgle:CubicBezierSegment
-                    Point1="235,35.75"
-                    Point2="239,35.75"
-                    Point3="239,39.75" />
+                    Point1="14,29"
+                    Point2="18,29"
+                    Point3="18,33" />
                   <mssgle:LineSegment
-                    End="239,64" />
+                    End="18,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée1]"
-          TopLeft="848.5,211.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="195.5,25.5"
-              Start="0,0"
-              End="188,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="93.75,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="93.75,0"
-                    Point2="97.75,0"
-                    Point3="97.75,4" />
-                  <mssgle:LineSegment
-                    End="97.75,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="97.75,21.5"
-                    Point2="97.75,25.5"
-                    Point3="101.75,25.5" />
-                  <mssgle:LineSegment
-                    End="188,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée2]"
-          TopLeft="816.5,289">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="300,-31"
-              Start="0,0"
-              End="300,-23.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-11.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-11.5"
-                    Point2="0,-15.5"
-                    Point3="4,-15.5" />
-                  <mssgle:LineSegment
-                    End="296,-15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="296,-15.5"
-                    Point2="300,-15.5"
-                    Point3="300,-19.5" />
-                  <mssgle:LineSegment
-                    End="300,-23.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="253,42"
-          Id="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects"
-          TopLeft="1014,346" />
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Unir tout sortie 1]"
-          TopLeft="1139.91666666667,258">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,88"
-              Start="0,0"
-              End="0,80.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,80.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162,42"
-          Id="Package\DFT - ODS_Prices\DCNV - Resizing"
-          TopLeft="401,380" />
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Sortie de conversion de données2]"
-          TopLeft="503,348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-21,32"
-              Start="0,0"
-              End="-21,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="-4,16" />
-                  <mssgle:LineSegment
-                    End="-17,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-17,16"
-                    Point2="-21,16"
-                    Point3="-21,20" />
-                  <mssgle:LineSegment
-                    End="-21,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS_Prices.Paths[Sortie de conversion de données3]"
-          TopLeft="482,422">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="21,74.5"
-              Start="0,0"
-              End="21,67">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.25"
-                    Point2="0,37.25"
-                    Point3="4,37.25" />
-                  <mssgle:LineSegment
-                    End="17,37.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17,37.25"
-                    Point2="21,37.25"
-                    Point3="21,41.25" />
-                  <mssgle:LineSegment
-                    End="21,67" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="2.5,42.25,16,16"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2389,20 +625,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS_Prices\OLE_DST - ODS_Prices">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS_Prices\OLE_DST - ADM Technical Rejects">
+    design-time-name="Package\DFT - ODS_Prices\Destination OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
