@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{DB1E0413-E10B-4449-AD16-FA50CDC21A60}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{121C99E4-5B14-4F7E-ABAE-99978ED43CB0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -529,10 +529,6 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="198,42"
-          Id="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices"
-          TopLeft="408.5,45.5" />
-        <NodeLayout
           Size="194,42"
           Id="Package\DFT - ODS_Prices\OLE_DST - ODS_Price"
           TopLeft="428.5,217.5" />
@@ -540,6 +536,10 @@
           Size="207,42"
           Id="Package\DFT - ODS_Prices\DER - Replace NULL by 0"
           TopLeft="419.5,117.5" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices"
+          TopLeft="408.5,45.5" />
         <EdgeLayout
           Id="Package\DFT - ODS_Prices.Paths[Sortie de source OLE DB]"
           TopLeft="507.5,87.5">
@@ -600,7 +600,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices">
+    design-time-name="Package\DFT - ODS_Prices\OLE_DST - ODS_Price">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -613,7 +613,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS_Prices\OLE_DST - ODS_Price">
+    design-time-name="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

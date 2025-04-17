@@ -1,0 +1,1038 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/17/2025 7:56:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KILLIAN-PC"
+  DTS:CreatorName="KILLIAN-PC\killi"
+  DTS:DTSID="{88AF662E-0FA9-456E-B5EC-9C562E01CA23}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="ETL_Project_Exec"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{C105D7CA-02E4-4F92-9287-0E5C82E5C7E9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DWH"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Conteneur de séquences"
+      DTS:DTSID="{E90DDE48-465F-40C2-96D0-582201A594AE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DWH">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DWH\DWH_Achievements"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{C394F32B-5B57-476E-8C62-817B0901ED44}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DWH_Achievements"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DWH_Achievements.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DWH\DWH_Games"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{B1233EEE-DD9A-41C9-B350-97998CC7AB05}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DWH_Games"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DWH_Games.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DWH\DWH_Gaming"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{9DF20893-43C3-4F8F-8D7B-851B390A5416}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DWH_Gaming"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DWH_Gaming.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DWH\DWH_Players"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{899AF839-1972-43CC-B818-40B35550CC8F}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DWH_Players"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DWH_Players.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DWH\DWH_Prices"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{3A198CFA-4CC8-4D3E-81DF-FCA8BCB53A73}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DWH_Prices"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DWH_Prices.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DWH\DWH_Sales"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{D959646E-5220-4AB7-AB86-D01C11F1F1AE}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DWH_Sales"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DWH_Sales.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DWH.PrecedenceConstraints[Contrainte]"
+          DTS:CreationName=""
+          DTS:DTSID="{11BBCBFE-62B3-44BA-9CA5-6E640C61050D}"
+          DTS:From="Package\DWH\DWH_Achievements"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte"
+          DTS:To="Package\DWH\DWH_Games" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DWH.PrecedenceConstraints[Contrainte 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{F7FEB7BC-9454-455A-80BD-9CD863E31EAD}"
+          DTS:From="Package\DWH\DWH_Games"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 1"
+          DTS:To="Package\DWH\DWH_Players" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DWH.PrecedenceConstraints[Contrainte 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{B32CC718-C99A-4BFF-AAC4-78466C952C6A}"
+          DTS:From="Package\DWH\DWH_Players"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 2"
+          DTS:To="Package\DWH\DWH_Prices" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DWH.PrecedenceConstraints[Contrainte 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{A96E895B-E67F-4939-B347-FE96648F2962}"
+          DTS:From="Package\DWH\DWH_Prices"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 3"
+          DTS:To="Package\DWH\DWH_Sales" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DWH.PrecedenceConstraints[Contrainte 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{D280F713-DA97-43A4-B6AF-265BF5016E19}"
+          DTS:From="Package\DWH\DWH_Sales"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 4"
+          DTS:To="Package\DWH\DWH_Gaming" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ODS"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Conteneur de séquences"
+      DTS:DTSID="{DA56CEDD-8DED-4874-B249-5A338DEED775}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ODS">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ODS\ODS_Achievements"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{53506186-09B3-4626-8008-2C517BCD6484}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ODS_Achievements"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ODS_Achievements.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\ODS\ODS_Games"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{392F0500-4AC2-4D4C-894F-7620D15D2964}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ODS_Games"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ODS_Games.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\ODS\ODS_History"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{12D73E07-1CCA-4F56-884B-9E27E125EA01}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ODS_History"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ODS_History.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\ODS\ODS_Players"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{4A283B4A-BDE2-4885-8520-0A1C69917BC3}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ODS_Players"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ODS_Players.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\ODS\ODS_Prices"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{7D16D0F5-BB71-49C4-AB38-389CF70C0036}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ODS_Prices"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ODS_Prices.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\ODS\ODS_Purchased_Games"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{E2F1A52E-4BA2-42F6-80F3-9E35C81CF169}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ODS_Purchased_Games"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ODS_Purchased_Games.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\ODS.PrecedenceConstraints[Contrainte]"
+          DTS:CreationName=""
+          DTS:DTSID="{075CB5A3-5EA7-4D15-87A7-18688C2D2A21}"
+          DTS:From="Package\ODS\ODS_Achievements"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte"
+          DTS:To="Package\ODS\ODS_Games" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\ODS.PrecedenceConstraints[Contrainte 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{3D72200E-49A8-4D8B-BB49-50DD39DB3E02}"
+          DTS:From="Package\ODS\ODS_Games"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 1"
+          DTS:To="Package\ODS\ODS_History" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\ODS.PrecedenceConstraints[Contrainte 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{3FD93A21-9356-44F4-86E7-CB3496E0BA46}"
+          DTS:From="Package\ODS\ODS_History"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 2"
+          DTS:To="Package\ODS\ODS_Players" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\ODS.PrecedenceConstraints[Contrainte 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{B8D4590E-D87A-44DB-BC3C-414854788821}"
+          DTS:From="Package\ODS\ODS_Players"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 3"
+          DTS:To="Package\ODS\ODS_Prices" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\ODS.PrecedenceConstraints[Contrainte 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{3EB2E7EC-9A04-4408-952F-E3D71C9E87EE}"
+          DTS:From="Package\ODS\ODS_Prices"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 4"
+          DTS:To="Package\ODS\ODS_Purchased_Games" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\STA"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Conteneur de séquences"
+      DTS:DTSID="{D6DA3F02-BFF9-437F-A4F0-630405A36D4B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="STA">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\STA\STA_Achievements"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{05C890AF-A4B3-4D72-9138-C31185BD6CC1}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STA_Achievements"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>STA_Achievements.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\STA\STA_Games"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{7793E8C2-4C7B-4470-A7D7-6AB1CAF49C7E}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STA_Games"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>STA_Games.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\STA\STA_History"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{4ED8E18B-D218-4661-9897-0DF3A9695A5A}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STA_History"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>STA_History.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\STA\STA_Players"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{42C0B8C7-188F-4D66-9038-78F8EA895FAA}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STA_Players"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>STA_Players.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\STA\STA_Prices"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{632D41AB-EF0C-41C2-AF60-338559BE3B43}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STA_Prices"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>STA_Prices.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\STA\STA_Purchaed_Games"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tâche d'exécution de package"
+          DTS:DTSID="{F472475A-00D1-4654-AEC5-6F2033257EEE}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STA_Purchaed_Games"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>STA_Purchased_Games.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\STA.PrecedenceConstraints[Contrainte]"
+          DTS:CreationName=""
+          DTS:DTSID="{31F33499-0576-4A27-903B-485E2D1DCECF}"
+          DTS:From="Package\STA\STA_Achievements"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte"
+          DTS:To="Package\STA\STA_Games" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\STA.PrecedenceConstraints[Contrainte 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{F54C5BC4-E534-48AF-87EA-1D5F4202D567}"
+          DTS:From="Package\STA\STA_Games"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 1"
+          DTS:To="Package\STA\STA_History" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\STA.PrecedenceConstraints[Contrainte 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{68FE492E-F8FE-4C1A-8948-658A3A4ABE8B}"
+          DTS:From="Package\STA\STA_History"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 2"
+          DTS:To="Package\STA\STA_Players" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\STA.PrecedenceConstraints[Contrainte 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{69B0D823-A31C-400C-B11B-75E34017BF09}"
+          DTS:From="Package\STA\STA_Players"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 3"
+          DTS:To="Package\STA\STA_Prices" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\STA.PrecedenceConstraints[Contrainte 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{82B502F1-3B50-415A-AE62-AAB75488FFE2}"
+          DTS:From="Package\STA\STA_Prices"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte 4"
+          DTS:To="Package\STA\STA_Purchaed_Games" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{BF297A57-66F4-432A-835A-95468AE8D7E7}"
+      DTS:From="Package\STA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\ODS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F1427569-A2DF-490D-926A-5CDE3FA45385}"
+      DTS:From="Package\ODS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 1"
+      DTS:To="Package\DWH" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\STA\STA_Achievements"
+          TopLeft="38,19.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\STA\STA_Games"
+          TopLeft="52,84.5" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\STA\STA_Prices"
+          TopLeft="59,293.5" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\STA\STA_History"
+          TopLeft="57,155.5" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\STA\STA_Players"
+          TopLeft="52,223.5" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\STA\STA_Purchaed_Games"
+          TopLeft="29,358.5" />
+        <EdgeLayout
+          Id="Package\STA.PrecedenceConstraints[Contrainte]"
+          TopLeft="124.5,61.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STA.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="125.25,126.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STA.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="125.5,197.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STA.PrecedenceConstraints[Contrainte 3]"
+          TopLeft="125.5,265.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STA.PrecedenceConstraints[Contrainte 4]"
+          TopLeft="127,335.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="270,453"
+          Size="270,496"
+          Id="Package\STA"
+          TopLeft="112.5,40.5" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\ODS\ODS_Achievements"
+          TopLeft="52.5,12.5" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\ODS\ODS_Games"
+          TopLeft="68.5,90.5" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\ODS\ODS_History"
+          TopLeft="72.5,162.5" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\ODS\ODS_Players"
+          TopLeft="72.5,227.5" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\ODS\ODS_Prices"
+          TopLeft="76.5,297.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\ODS\ODS_Purchased_Games"
+          TopLeft="50.5,369.5" />
+        <EdgeLayout
+          Id="Package\ODS.PrecedenceConstraints[Contrainte]"
+          TopLeft="141,54.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ODS.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="142.25,132.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ODS.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="144.75,204.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ODS.PrecedenceConstraints[Contrainte 3]"
+          TopLeft="146,269.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ODS.PrecedenceConstraints[Contrainte 4]"
+          TopLeft="149.25,339.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="287,454"
+          Size="287,498"
+          Id="Package\ODS"
+          TopLeft="448.5,37.5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\DWH\DWH_Achievements"
+          TopLeft="45.5,15.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\DWH\DWH_Games"
+          TopLeft="58.5,85.5" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\DWH\DWH_Players"
+          TopLeft="67.5,158.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\DWH\DWH_Prices"
+          TopLeft="78.5,217.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DWH\DWH_Sales"
+          TopLeft="56.5,285.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DWH\DWH_Gaming"
+          TopLeft="66.5,364.5" />
+        <EdgeLayout
+          Id="Package\DWH.PrecedenceConstraints[Contrainte]"
+          TopLeft="133.75,57.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="132,127.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,31"
+              Start="0,0"
+              End="9.5,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="5.5,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,15.5"
+                    Point2="9.5,15.5"
+                    Point3="9.5,19.5" />
+                  <mssgle:LineSegment
+                    End="9.5,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="67.5,179.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11,59"
+              Start="0,0"
+              End="3.5,59">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,55"
+                    Point2="-22.5,59"
+                    Point3="-18.5,59" />
+                  <mssgle:LineSegment
+                    End="3.5,59" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH.PrecedenceConstraints[Contrainte 3]"
+          TopLeft="149.5,259.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.5,26"
+              Start="0,0"
+              End="-23.5,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="-4,13" />
+                  <mssgle:LineSegment
+                    End="-19.5,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.5,13"
+                    Point2="-23.5,13"
+                    Point3="-23.5,17" />
+                  <mssgle:LineSegment
+                    End="-23.5,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH.PrecedenceConstraints[Contrainte 4]"
+          TopLeft="126,327.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5,37"
+              Start="0,0"
+              End="15.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="11.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,18.5"
+                    Point2="15.5,18.5"
+                    Point3="15.5,22.5" />
+                  <mssgle:LineSegment
+                    End="15.5,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="275,461"
+          Size="275,504"
+          Id="Package\DWH"
+          TopLeft="784.5,39.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="382.5,287.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="735.5,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49,0"
+              Start="0,0"
+              End="41.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

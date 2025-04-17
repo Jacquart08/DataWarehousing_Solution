@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">FAVY-THE-ANALYS</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAh1YLyNTMY0OXE8r/DXkURQAAAAACAAAAAAAQZgAAAAEAACAAAAB6Wdk0TVpjNvVYHVruhvqlDRCAa4ZWbUjks1XMkqKoVwAAAAAOgAAAAAIAACAAAAAR7BWuRvVcOA1uXt8QPLq7KoE8XNQYJe8Y4fCNUEAvvZAAAABAaAa1wMlJf2CLiedQ88YQI1PRVq1+1IaSTb/BmjdXkYUMaJ5Hg9BIh0awJUiFmG1XCZXVWfUDhRenDJvf82brDjiRLEPzq7MNbGSGuGKn5hZyKkMS4NWaB1E1gLgMzHbkU2+3pJqkOZIu0O6HHiQx7nAqcLZ7ossYeUi6sTENDQg6Ils36GN6BSOyBfKR1T5AAAAAB9ZEspRRYDsWuohxSadJZzwsIqnjBaY027CTIiEFhLE/A6YrU5P9wanrsZ1tkl2nb0HPrRxEoNjuVPCK7m9ojg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAh1YLyNTMY0OXE8r/DXkURQAAAAACAAAAAAAQZgAAAAEAACAAAAAbU8lyOa7IrLGmoexDS61KgMXzE0HYLummP6aDJUU/yAAAAAAOgAAAAAIAACAAAABoe7vwAMB4n80fxA4e3cCq+gEs0qR01HIKHtqcIoZmQ5AAAAD3PmbiYxTXvpNc1Izb0eHMa1CIZybhZHcs2n0rQJqBzvF8qDX10WG9GlvANURLpEEfvncO8UQS9rX9tHm8PQqQzQPmXZPZFwwTeBdVQL24ROZWxZ4HInk73zHKsQIh35rKn9BmYAiwfvKhBfzimfNTJ36HHngcHpwzVSN8HVSlrbAi0SH8CeHQNCgDNWajKUBAAAAArO9vO3tJcmSw2S08yz6Lkbn6SBoC++uNDGoDFXv7mqtxt/Yp4LigfNWPFt3JiQyWT7N5y22+EGbNz6eVxnOmAQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -50,6 +50,7 @@
           <SSIS:Package SSIS:Name="DWH_Purchased_Games.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DWH_Sales.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DWH_Gaming.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ETL_Project_Exec.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="localhost.ETL_STA.conmgr" />
@@ -5663,10 +5664,27 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">10</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3F49C9D8-A005-46BE-BEC2-7C3B35C5C085}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3A0233DF-CF93-4A0C-BE52-CD0ED287AAB3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ETL_Project_Exec.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{88AF662E-0FA9-456E-B5EC-9C562E01CA23}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ETL_Project_Exec</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{61FF8350-95D1-42B5-9D27-7E2152326708}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

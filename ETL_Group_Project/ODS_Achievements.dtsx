@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{7FE3FB65-E7E7-4C3B-B248-BB27315C4ECE}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{4AFD4986-D0D4-41C7-8563-2CEC037EE344}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -521,8 +521,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project]"
+                  connectionManagerID="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_STA]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
               </connections>
@@ -746,40 +746,6 @@
           Id="Package\DFT - ODS_Achievements\DCNV - Resizing"
           TopLeft="455.5,246.581967213115" />
         <EdgeLayout
-          Id="Package\DFT - ODS_Achievements.Paths[Sortie de colonne dérivée]"
-          TopLeft="634.5,205.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17,62.081967213115"
-              Start="0,0"
-              End="-9.5,62.081967213115">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,0"
-                    Point2="22.5,0"
-                    Point3="22.5,4" />
-                  <mssgle:LineSegment
-                    End="22.5,58.081967213115" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.5,58.081967213115"
-                    Point2="22.5,62.081967213115"
-                    Point3="18.5,62.081967213115" />
-                  <mssgle:LineSegment
-                    End="-9.5,62.081967213115" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\DFT - ODS_Achievements.Paths[Sortie de source OLE DB]"
           TopLeft="544.75,113.5">
           <EdgeLayout.Curve>
@@ -815,6 +781,40 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,20.918032786885" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS_Achievements.Paths[Sortie de colonne dérivée]"
+          TopLeft="634.5,205.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17,62.081967213115"
+              Start="0,0"
+              End="-9.5,62.081967213115">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,58.081967213115" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,58.081967213115"
+                    Point2="22.5,62.081967213115"
+                    Point3="18.5,62.081967213115" />
+                  <mssgle:LineSegment
+                    End="-9.5,62.081967213115" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
