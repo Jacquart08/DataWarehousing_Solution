@@ -1,6 +1,6 @@
-CREATE DATABSE ETL_project_STA;
-CREATE DATABSE ETL_project_ODS;
-CREATE DATABSE ETL_project_DWH;
+CREATE DATABASE ETL_project_STA;
+CREATE DATABASE ETL_project_ODS;
+CREATE DATABASE ETL_project_DWH;
 -- Table Games -- 
 CREATE TABLE [STA_Games] (
    [gameid] VARCHAR(50),
@@ -90,7 +90,7 @@ CREATE TABLE [DimGames] (
    [gameid] varchar(50),
    [title] varchar(255),
    [plateform] varchar(50),
-   [genres] nvarchar(255),
+   [genres] nvarchar(255)
 );
 -- Table [DimHistory]
 CREATE TABLE [DimHistory] (
@@ -118,7 +118,7 @@ CREATE TABLE [DimPurchase_Games] (
    [Purchase_gamesKey] int IDENTITY(1, 1) Primary Key,
    [gameid] varchar(50),
    [playerid] varchar(50),
-   [purchaseid] varchar(70),
+   [purchaseid] varchar(70)
 );
 -- Table [FACT_Sales]
 CREATE TABLE [FACT_Sales] (
