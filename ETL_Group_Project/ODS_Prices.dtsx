@@ -1,0 +1,629 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/15/2025 10:29:37 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KILLIAN-PC"
+  DTS:CreatorName="KILLIAN-PC\killi"
+  DTS:DTSID="{ADFEA14F-8169-4773-9BD4-6AFCBDC3AF3B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{DB1E0413-E10B-4449-AD16-FA50CDC21A60}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9821E0F3-10B0-423B-98FF-1F7F0AD0D941}"
+      DTS:ObjectName="localhost.ETL_project_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{9821E0F3-10B0-423B-98FF-1F7F0AD0D941}localhost.ETL_project_ODS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - ODS_Prices"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{42B404AF-042D-41CD-B5AB-838DEA091F71}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - ODS_Prices"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER - Replace NULL by 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée].Columns[eur]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="eur"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée].Columns[eur_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="102"
+                      lineageId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée].Columns[eur_clean]"
+                      name="eur_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[REPLACENULL](#{Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]},0)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(eur,0)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="OLE_DST - ODS_Price"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[ODS_Prices]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].Columns[eur_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="102"
+                      cachedName="eur_clean"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
+                      lineageId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée].Columns[eur_clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gameid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[eur]"
+                      dataType="numeric"
+                      name="eur"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB].ExternalColumns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      name="date_acquired" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="OLE_SRC - STA_Prices"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[STA_Prices]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Connections[OleDbConnection]"
+                  connectionManagerID="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_STA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].ExternalColumns[gameid]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[gameid]"
+                      name="gameid"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].ExternalColumns[eur]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[eur]"
+                      name="eur"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].ExternalColumns[date_acquired]"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].Columns[date_acquired]"
+                      name="date_acquired"
+                      truncationRowDisposition="IgnoreFailure" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].ExternalColumns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gameid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].ExternalColumns[eur]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="eur" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB].ExternalColumns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      name="date_acquired" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[gameid]"
+                      name="gameid" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[eur]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[eur]"
+                      name="eur" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[date_acquired]"
+                      name="date_acquired" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée]"
+              endId="Package\DFT - ODS_Prices\OLE_DST - ODS_Price.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - ODS_Prices.Paths[Sortie de source OLE DB]"
+              endId="Package\DFT - ODS_Prices\DER - Replace NULL by 0.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate ODS_Prices"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{08843E1B-3522-486D-B936-769B5F894A7B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate ODS_Prices"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9821E0F3-10B0-423B-98FF-1F7F0AD0D941}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.ODS_Prices" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{E080D4FD-D40C-4D13-8428-8409484CEC15}"
+      DTS:From="Package\SQL - Truncate ODS_Prices"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\DFT - ODS_Prices" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\DFT - ODS_Prices"
+          TopLeft="217.5,133.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\SQL - Truncate ODS_Prices"
+          TopLeft="181.5,55.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="290,97.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5,36"
+              Start="0,0"
+              End="12.5,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="8.5,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,18"
+                    Point2="12.5,18"
+                    Point3="12.5,22" />
+                  <mssgle:LineSegment
+                    End="12.5,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - ODS_Prices">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="198,42"
+          Id="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices"
+          TopLeft="408.5,45.5" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\DFT - ODS_Prices\OLE_DST - ODS_Price"
+          TopLeft="428.5,217.5" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\DFT - ODS_Prices\DER - Replace NULL by 0"
+          TopLeft="419.5,117.5" />
+        <EdgeLayout
+          Id="Package\DFT - ODS_Prices.Paths[Sortie de source OLE DB]"
+          TopLeft="507.5,87.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5,30"
+              Start="0,0"
+              End="15.5,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="4,15" />
+                  <mssgle:LineSegment
+                    End="11.5,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,15"
+                    Point2="15.5,15"
+                    Point3="15.5,19" />
+                  <mssgle:LineSegment
+                    End="15.5,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS_Prices.Paths[Sortie de colonne dérivée]"
+          TopLeft="524.25,159.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS_Prices\OLE_SRC - STA_Prices">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS_Prices\OLE_DST - ODS_Price">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

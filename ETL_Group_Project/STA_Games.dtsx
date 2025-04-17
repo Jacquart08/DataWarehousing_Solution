@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{0F88D885-13DC-477E-9A8B-54400E8A788B}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{E67E469D-8B3D-4CFD-871E-E2DB904C8D16}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\FAVOUR\Desktop\ETL_Group_Project\playstation\games.csv">
+          DTS:ConnectionString="C:\Users\killi\Documents\Projet ETL\TEST\Data\games.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gameid"
-              DTS:DTSID="{FCDA2649-711D-4E8C-ADBB-DD967BB95C1F}"
+              DTS:DTSID="{3DD578B3-39EF-4578-A90B-C60717C4A62E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="title"
-              DTS:DTSID="{7F0E8864-B347-46D5-A5DD-AB48997C40CB}"
+              DTS:DTSID="{DEF072B8-49DC-4A32-BDA3-A5633F32526A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="platform"
-              DTS:DTSID="{FBCA8F40-5618-434C-88CD-8B7239BEC69B}"
+              DTS:DTSID="{97BDCA0C-9BFC-40C3-A315-3905431E097D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="developers"
-              DTS:DTSID="{CF79D0A0-DB18-420F-A752-E40456B326FA}"
+              DTS:DTSID="{E972D35D-15E9-432C-8092-4AC7751866D6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="publishers"
-              DTS:DTSID="{1F2E6881-BA90-4161-AE6F-8BCF1332A3A0}"
+              DTS:DTSID="{E562B346-0047-412E-B057-B64187D868BB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="genres"
-              DTS:DTSID="{9F4C7C0C-9D5A-45BB-A7E2-36FBB7FEB911}"
+              DTS:DTSID="{C8D5131F-48A6-47D8-B1AB-5EAABBFE9A99}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="supported_languages"
-              DTS:DTSID="{172D0D2A-138A-4204-9870-4164797F2FB5}"
+              DTS:DTSID="{46612109-B5DD-47A7-A16E-3D0F8C2BE09D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,10 +102,34 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="release_date"
-              DTS:DTSID="{39656D94-17B2-4A4D-9A40-7EF28D5D01BB}"
+              DTS:DTSID="{F99F3B04-1C36-46DA-B0E0-A1B05895F82C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1E7CA61D-404E-4BBD-9393-C39FBD10F8E3}"
+      DTS:ObjectName="localhost.ETL_project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{1E7CA61D-404E-4BBD-9393-C39FBD10F8E3}localhost.ETL_project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E91ED6AC-9FAE-4754-BCA8-CA4CE4914AD2}"
+      DTS:ObjectName="localhost.ETL_project_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{E91ED6AC-9FAE-4754-BCA8-CA4CE4914AD2}localhost.ETL_project_STA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -342,7 +366,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Games_STA]</property>
+                  name="OpenRowset">[dbo].[STA_Games]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -385,8 +409,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - STA Games\OLE_DST - STA.Connections[OleDbConnection]"
-                  connectionManagerID="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_STA]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project_STA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project_STA]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -510,7 +534,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [ETL_STA]. [dbo].[Games_STA]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [ETL_project_STA]. [dbo].[STA_Games]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -525,23 +549,23 @@
       DTS:To="Package\DFT - STA Games" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\DFT - STA Games"
           TopLeft="77.6923080776217,169.032254762692" />
         <NodeLayout
-          Size="189.6,41.6"
+          Size="190,42"
           Id="Package\SQL - Truncate Games"
           TopLeft="60,60" />
         <EdgeLayout
@@ -575,13 +599,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\DFT - STA Games\FF_SRC - Games"
-          TopLeft="96.1538482479444,78.8387072899464" />
-        <NodeLayout
-          Size="158.4,41.6"
+          Size="158,42"
           Id="Package\DFT - STA Games\OLE_DST - STA"
           TopLeft="105.384617679747,194.580639268804" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\DFT - STA Games\FF_SRC - Games"
+          TopLeft="96.1538482479444,78.8387072899464" />
         <EdgeLayout
           Id="Package\DFT - STA Games.Paths[Flat File Source Output]"
           TopLeft="181.569232963846,120.438707289946">

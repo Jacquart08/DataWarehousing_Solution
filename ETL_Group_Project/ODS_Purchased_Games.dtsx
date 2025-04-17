@@ -1,0 +1,785 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/16/2025 6:32:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KILLIAN-PC"
+  DTS:CreatorName="KILLIAN-PC\killi"
+  DTS:DTSID="{6D0BDF81-AD41-4D61-B84C-E81BCB7CC48A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{65A16460-6BA5-4B80-BD87-9843BA3F101E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{051D6BCB-3D30-4B9F-BB04-708DF765EB68}"
+      DTS:ObjectName="localhost.ETL_project_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{051D6BCB-3D30-4B9F-BB04-708DF765EB68}localhost.ETL_project_ODS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - ODS_Purchase_Game"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{978E4446-C68A-47CD-90FB-B987B951DFC8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - ODS_Purchase_Game"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Conversion de données"
+              name="DCNV - Resizing"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Inputs[Entrée de conversion de données]"
+                  name="Entrée de conversion de données">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[purchaseid]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="purchaseid"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie de colonne dérivée].Columns[purchaseid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[playerid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie de conversion de données]"
+                  exclusionGroup="1"
+                  name="Sortie de conversion de données"
+                  synchronousInputId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[purchaseid_resize]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="70"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[purchaseid_resize]"
+                      name="purchaseid_resize"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie de colonne dérivée].Columns[purchaseid]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of playerid]"
+                      name="Copy of playerid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[playerid]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de conversion de données"
+                  synchronousInputId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER - Creation of purchase ID"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Inputs[Entrée de colonne dérivée].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[playerid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Inputs[Entrée de colonne dérivée].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[gameid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie de colonne dérivée].Columns[purchaseid]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie de colonne dérivée].Columns[purchaseid]"
+                      name="purchaseid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[playerid]} + "_" + #{Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[gameid]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">playerid + "_" + gameid</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="OLE_DST - ODS_Purchase_Game"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[ODS_Purchase_Games]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      externalMetadataColumnId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[gameid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB].Columns[purchaseid_resize]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="70"
+                      cachedName="purchaseid_resize"
+                      externalMetadataColumnId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB].ExternalColumns[purchaseid]"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[purchaseid_resize]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB].Columns[Copy of playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Copy of playerid"
+                      externalMetadataColumnId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB].ExternalColumns[playerid]"
+                      lineageId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of playerid]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gameid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB].ExternalColumns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="playerid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB].ExternalColumns[purchaseid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="purchaseid" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="OLE_DST - STA_Purchase_Game"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[STA_Purchase_games]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Connections[OleDbConnection]"
+                  connectionManagerID="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_STA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].ExternalColumns[playerid]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[playerid]"
+                      name="playerid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].ExternalColumns[gameid]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].Columns[gameid]"
+                      name="gameid"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].ExternalColumns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="playerid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB].ExternalColumns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gameid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie d'erreur de source OLE DB].Columns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie d'erreur de source OLE DB].Columns[playerid]"
+                      name="playerid" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie d'erreur de source OLE DB].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie d'erreur de source OLE DB].Columns[gameid]"
+                      name="gameid" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - ODS_Purchase_Game.Paths[Sortie de colonne dérivée]"
+              endId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Inputs[Entrée de conversion de données]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - ODS_Purchase_Game.Paths[Sortie de conversion de données]"
+              endId="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de conversion de données"
+              startId="Package\DFT - ODS_Purchase_Game\DCNV - Resizing.Outputs[Sortie de conversion de données]" />
+            <path
+              refId="Package\DFT - ODS_Purchase_Game.Paths[Sortie de source OLE DB]"
+              endId="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate ODS_Purchase_Game"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{DFDC5A2E-F848-47FF-BCE5-C936DC608BA9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate ODS_Purchase_Game"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{051D6BCB-3D30-4B9F-BB04-708DF765EB68}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.ODS_Purchase_Games" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{F2CE11A5-CB81-449E-A1BB-B35B55636ADD}"
+      DTS:From="Package\SQL - Truncate ODS_Purchase_Game"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\DFT - ODS_Purchase_Game" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="269,42"
+          Id="Package\SQL - Truncate ODS_Purchase_Game"
+          TopLeft="320.5,35.5" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\DFT - ODS_Purchase_Game"
+          TopLeft="304.5,164.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="455,77.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-39.5,87"
+              Start="0,0"
+              End="-39.5,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.5"
+                    Point2="0,43.5"
+                    Point3="-4,43.5" />
+                  <mssgle:LineSegment
+                    End="-35.5,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.5,43.5"
+                    Point2="-39.5,43.5"
+                    Point3="-39.5,47.5" />
+                  <mssgle:LineSegment
+                    End="-39.5,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - ODS_Purchase_Game">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="249,42"
+          Id="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game"
+          TopLeft="424.5,81.5" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\DFT - ODS_Purchase_Game\DER - Creation of purchase ID"
+          TopLeft="419.5,189.5" />
+        <EdgeLayout
+          Id="Package\DFT - ODS_Purchase_Game.Paths[Sortie de source OLE DB]"
+          TopLeft="549,123.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.5,66"
+              Start="0,0"
+              End="-15.5,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="-4,33" />
+                  <mssgle:LineSegment
+                    End="-11.5,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.5,33"
+                    Point2="-15.5,33"
+                    Point3="-15.5,37" />
+                  <mssgle:LineSegment
+                    End="-15.5,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162,42"
+          Id="Package\DFT - ODS_Purchase_Game\DCNV - Resizing"
+          TopLeft="391.5,265.5" />
+        <EdgeLayout
+          Id="Package\DFT - ODS_Purchase_Game.Paths[Sortie de colonne dérivée]"
+          TopLeft="533.5,231.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-61,34"
+              Start="0,0"
+              End="-61,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="-4,17" />
+                  <mssgle:LineSegment
+                    End="-57,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-57,17"
+                    Point2="-61,17"
+                    Point3="-61,21" />
+                  <mssgle:LineSegment
+                    End="-61,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="251,42"
+          Id="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game"
+          TopLeft="404.5,357.5" />
+        <EdgeLayout
+          Id="Package\DFT - ODS_Purchase_Game.Paths[Sortie de conversion de données]"
+          TopLeft="472.5,307.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.5,50"
+              Start="0,0"
+              End="57.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="53.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.5,25"
+                    Point2="57.5,25"
+                    Point3="57.5,29" />
+                  <mssgle:LineSegment
+                    End="57.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS_Purchase_Game\OLE_DST - STA_Purchase_Game">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS_Purchase_Game\OLE_DST - ODS_Purchase_Game">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

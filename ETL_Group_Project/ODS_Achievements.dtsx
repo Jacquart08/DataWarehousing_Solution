@@ -1,0 +1,856 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/15/2025 7:32:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KILLIAN-PC"
+  DTS:CreatorName="KILLIAN-PC\killi"
+  DTS:DTSID="{55AF8F3B-2951-425C-8B2B-1C6CEA82E989}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{7FE3FB65-E7E7-4C3B-B248-BB27315C4ECE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.A24_ADM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{69F6AEBA-4DCE-425D-9494-B512D3BFDC36}"
+      DTS:ObjectName="localhost.A24_ADM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=A24_ADM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{69F6AEBA-4DCE-425D-9494-B512D3BFDC36}localhost.A24_ADM;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{461622A2-8ECF-48BD-B444-A326752E0491}"
+      DTS:ObjectName="localhost.ETL_project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{461622A2-8ECF-48BD-B444-A326752E0491}localhost.ETL_project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E822BD4A-6EE3-4C06-8B35-C93345143DF1}"
+      DTS:ObjectName="localhost.ETL_project_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{E822BD4A-6EE3-4C06-8B35-C93345143DF1}localhost.ETL_project_ODS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - ODS_Achievements"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{0EE7C634-3132-4D0A-838B-3F200AEC984E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - ODS_Achievements"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - ODS_Achievements\DCNV - Resizing"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Conversion de données"
+              name="DCNV - Resizing"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Inputs[Entrée de conversion de données]"
+                  name="Entrée de conversion de données">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[achievementid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[gameid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[rarity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="rarity"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[rarity]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Inputs[Entrée de conversion de données].Columns[rarity_level]"
+                      cachedDataType="i4"
+                      cachedName="rarity_level"
+                      lineageId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie de colonne dérivée].Columns[rarity_level]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données]"
+                  exclusionGroup="1"
+                  name="Sortie de conversion de données"
+                  synchronousInputId="Package\DFT - ODS_Achievements\DCNV - Resizing.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of achievementid]"
+                      name="Copy of achievementid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[achievementid]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of gameid]"
+                      name="Copy of gameid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[gameid]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of rarity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="12"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of rarity]"
+                      name="Copy of rarity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[rarity]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of rarity_level]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of rarity_level]"
+                      name="Copy of rarity_level"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie de colonne dérivée].Columns[rarity_level]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de conversion de données"
+                  synchronousInputId="Package\DFT - ODS_Achievements\DCNV - Resizing.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Achievements\DER - Rarity-to-value"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER - Rarity-to-value"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Inputs[Entrée de colonne dérivée].Columns[rarity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="rarity"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[rarity]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie de colonne dérivée].Columns[rarity_level]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie de colonne dérivée].Columns[rarity_level]"
+                      name="rarity_level"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_I4)(#{Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[rarity]} == "Bronze" ? 1 : #{Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[rarity]} == "Silver" ? 2 : #{Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[rarity]} == "Gold" ? 3 : #{Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[rarity]} == "Platinum" ? 4 : NULL(DT_I4))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)(rarity == "Bronze" ? 1 : rarity == "Silver" ? 2 : rarity == "Gold" ? 3 : rarity == "Platinum" ? 4 : NULL(DT_I4))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="OLE_DST - ODS_Achievements"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[ODS_Achievements]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project_ODS]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].Columns[Copy of achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of achievementid"
+                      externalMetadataColumnId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].ExternalColumns[achievementid]"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of achievementid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].Columns[Copy of gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of gameid"
+                      externalMetadataColumnId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of gameid]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].Columns[Copy of rarity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Copy of rarity"
+                      externalMetadataColumnId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].ExternalColumns[rarity]"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of rarity]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].Columns[Copy of rarity_level]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of rarity_level"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].ExternalColumns[rarity_level]"
+                      lineageId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données].Columns[Copy of rarity_level]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].ExternalColumns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="achievementid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].ExternalColumns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gameid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].ExternalColumns[rarity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="rarity" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB].ExternalColumns[rarity_level]"
+                      dataType="i4"
+                      name="rarity_level" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="OLE_SRC - STA_Achievements"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[STA_Achievements]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_project]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_project]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].ExternalColumns[achievementid]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[achievementid]"
+                      name="achievementid"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].ExternalColumns[gameid]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[gameid]"
+                      name="gameid"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[rarity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].ExternalColumns[rarity]"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].Columns[rarity]"
+                      name="rarity"
+                      truncationRowDisposition="IgnoreFailure" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].ExternalColumns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="achievementid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].ExternalColumns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gameid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB].ExternalColumns[rarity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="rarity" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[achievementid]"
+                      name="achievementid" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[gameid]"
+                      name="gameid" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[rarity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[rarity]"
+                      name="rarity" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - ODS_Achievements.Paths[Sortie de colonne dérivée]"
+              endId="Package\DFT - ODS_Achievements\DCNV - Resizing.Inputs[Entrée de conversion de données]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - ODS_Achievements.Paths[Sortie de conversion de données]"
+              endId="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de conversion de données"
+              startId="Package\DFT - ODS_Achievements\DCNV - Resizing.Outputs[Sortie de conversion de données]" />
+            <path
+              refId="Package\DFT - ODS_Achievements.Paths[Sortie de source OLE DB]"
+              endId="Package\DFT - ODS_Achievements\DER - Rarity-to-value.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate ODS_Achievements"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{31D0A953-2B2D-4871-B368-9468235E4B93}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate ODS_Achievements"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E822BD4A-6EE3-4C06-8B35-C93345143DF1}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.ODS_Achievements " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{DB8C4EF5-D4D5-4A2A-B80E-001D5B3FAEA9}"
+      DTS:From="Package\SQL - Truncate ODS_Achievements"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\DFT - ODS_Achievements" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="209,42"
+          Id="Package\DFT - ODS_Achievements"
+          TopLeft="117.5,187.5" />
+        <NodeLayout
+          Size="256,42"
+          Id="Package\SQL - Truncate ODS_Achievements"
+          TopLeft="92.5,61.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="221.25,103.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - ODS_Achievements">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="238,42"
+          Id="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements"
+          TopLeft="411,317" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements"
+          TopLeft="428.5,71.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\DFT - ODS_Achievements\DER - Rarity-to-value"
+          TopLeft="451.5,184.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\DFT - ODS_Achievements\DCNV - Resizing"
+          TopLeft="455.5,246.581967213115" />
+        <EdgeLayout
+          Id="Package\DFT - ODS_Achievements.Paths[Sortie de colonne dérivée]"
+          TopLeft="634.5,205.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17,62.081967213115"
+              Start="0,0"
+              End="-9.5,62.081967213115">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,58.081967213115" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,58.081967213115"
+                    Point2="22.5,62.081967213115"
+                    Point3="18.5,62.081967213115" />
+                  <mssgle:LineSegment
+                    End="-9.5,62.081967213115" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS_Achievements.Paths[Sortie de source OLE DB]"
+          TopLeft="544.75,113.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS_Achievements.Paths[Sortie de conversion de données]"
+          TopLeft="533.25,288.581967213115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.418032786885"
+              Start="0,0"
+              End="0,20.918032786885">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.918032786885" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS_Achievements\OLE_DST - ODS_Achievements">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS_Achievements\OLE_SRC - STA_Achievements">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
