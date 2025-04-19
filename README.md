@@ -13,7 +13,7 @@ In this project we used a dataset from the video game domain.
 
 **-** Playstation: this dataset is gotten from the Kaggle dataset public repository.
 
-a local copy of the necessary files:
+a local copy of the necessary files are data folder: 
 1. Achievements.csv
 2. Games.csv
 3. History.csv
