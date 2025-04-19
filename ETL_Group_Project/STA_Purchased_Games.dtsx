@@ -7,12 +7,13 @@
   DTS:CreatorName="FAVY-THE-ANALYS\FAVOUR"
   DTS:DTSID="{55D6C7A6-850B-48B3-9B81-F10D7CA85616}"
   DTS:ExecutableType="Microsoft.Package"
+  DTS:FailParentOnFailure="True"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="STA_Purchased_Games"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{BCFF5E6C-AE84-4BA7-8566-4C282BE1E76D}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{768E465E-2BCB-4817-BE54-CD8DB2B0DA5B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +26,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0E194A88-AC87-4284-8918-A8CCE28E4FF5}localhost.ETL_project;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{0E194A88-AC87-4284-8918-A8CCE28E4FF5}localhost.ETL_project;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +38,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-STA_Purchased_Games-{FAD328D5-DF86-46FF-AAD8-DC09D8183AC3}localhost.ETL_project_STA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-STA_Purchased_Games-{FAD328D5-DF86-46FF-AAD8-DC09D8183AC3}localhost.ETL_project_STA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -45,6 +46,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{D78F682B-70E9-4C20-93AF-EF7F86D869E1}"
       DTS:ObjectName="Purchased_games">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Data_path] + "purchased_games.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -54,7 +57,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\killi\Documents\Projet ETL\TEST\Data\purchased_games.csv">
+          DTS:ConnectionString="C:\Users\User\source\repos\ETL_Project\ETL_Group_Data\Data\Datapurchased_games.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -63,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="playerid"
-              DTS:DTSID="{03FDF077-DAAE-4057-AC06-A90D208A3668}"
+              DTS:DTSID="{01627D89-BEAF-4BD2-A698-1ADB75B2C6A7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -72,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="library"
-              DTS:DTSID="{CE099881-0A41-434B-AA4F-66B3DACA1CC3}"
+              DTS:DTSID="{CCC188C1-0F84-4133-930F-829E51E890DD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1423,7 +1426,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{36AC28F3-7E8B-4243-96A2-8BD5D096B0F0}"
+          SQLTask:Connection="{FAD328D5-DF86-46FF-AAD8-DC09D8183AC3}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [ETL_project_STA]. [dbo].[STA_Purchase_games]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1439,12 +1442,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       DTS:To="Package\DFT - STA Purchased_Games" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
-<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
-<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -1493,7 +1496,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\DFT - STA Purchased_Games\OLE_DST - STA"
           TopLeft="120.923080013966,274.903217209009" />
         <NodeLayout
-          Size="222,42"
+          Size="218.5,42"
           Id="Package\DFT - STA Purchased_Games\FF_SRC - Purchased_Games"
           TopLeft="96.1538482479444,78.8387072899464" />
         <NodeLayout
@@ -1524,7 +1527,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - STA Purchased_Games.Paths[Flat File Source Output]"
-          TopLeft="203.326924123972,120.838707289946">
+          TopLeft="202.451924123972,120.838707289946">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

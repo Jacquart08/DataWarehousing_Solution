@@ -9,18 +9,21 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
+  DTS:MaxErrorCount="5"
   DTS:ObjectName="STA_Achievements"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{AB840EAC-89E8-45F6-ADB3-F1E06354D370}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{61F55CBC-2885-490F-9A94-1BBC5D27ED84}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Achivenents]"
+      DTS:refId="Package.ConnectionManagers[Achivements]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{7572DFE0-3942-4041-A453-F7E9BB16CC82}"
-      DTS:ObjectName="Achivenents">
+      DTS:ObjectName="Achivements">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Data_path] + "achievements.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\killi\Documents\Projet ETL\TEST\Data\achievements.csv">
+          DTS:ConnectionString="C:\Users\User\source\repos\ETL_Project\ETL_Group_Data\Data\Data\achievements.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +42,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="achievementid"
-              DTS:DTSID="{7B640599-FEB0-4155-B8DF-65FECF25BD69}"
+              DTS:DTSID="{0A73FBC8-DC2C-44C5-A2CA-4DD56CE3D94A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +51,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gameid"
-              DTS:DTSID="{38FDB3E5-BBFA-4FBE-BAA3-D3D6E5DDFF65}"
+              DTS:DTSID="{556AAE94-77B9-4C6B-BA26-18ADB05F96E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +60,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="title"
-              DTS:DTSID="{C229DBB8-8EF7-4CF4-B634-27F87ED57775}"
+              DTS:DTSID="{B44BA38A-515E-4321-B93F-40FF1C7B097C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +69,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="description"
-              DTS:DTSID="{CEDC1895-982A-4D53-8C83-5B84C794CB0C}"
+              DTS:DTSID="{C2DCF9D7-F2D7-4AD4-ACD0-DEC0016C507A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +78,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="rarity"
-              DTS:DTSID="{6C944F6C-801F-46B7-A3C3-A7C087114C9F}"
+              DTS:DTSID="{9618C0D2-30B5-4626-8E5A-5C02D66F4C34}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -86,6 +89,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{81A8A675-E4A9-423C-AB53-98DBCA6BC9DF}"
       DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DataFolder] + "\\" + "achievements.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -95,7 +100,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\FAVOUR\Desktop\ETL_Group_Project\playstation\achievements.csv">
+          DTS:ConnectionString="Data\achievements.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +109,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="achievementid"
-              DTS:DTSID="{CEB0D39F-C6F6-46C5-8602-61A2FA9E3C54}"
+              DTS:DTSID="{AC53413D-60A9-4F77-9225-BE17CC03AC0C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +118,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gameid"
-              DTS:DTSID="{DE92DB3A-F76D-4F23-A8E5-7357C309F783}"
+              DTS:DTSID="{053A148A-AB8B-475F-B64A-197F0F3A58A8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -122,7 +127,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="rarity"
-              DTS:DTSID="{8D86711D-7C52-4C4F-9C2D-CFCF3A55B6FE}"
+              DTS:DTSID="{11D51A8B-CC60-4AB2-9CBB-23BB8B27BF9B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -202,7 +207,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-STA_Achievements-{7C4F9104-8519-462F-877F-5C059D255C4C}localhost.ETL_project;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_project_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-STA_Achievements-{7C4F9104-8519-462F-877F-5C059D255C4C}localhost.ETL_project;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -256,8 +261,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - STA Achievements\FF_SRC - Achievements.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Achivenents]"
-                  connectionManagerRefId="Package.ConnectionManagers[Achivenents]"
+                  connectionManagerID="Package.ConnectionManagers[Achivements]"
+                  connectionManagerRefId="Package.ConnectionManagers[Achivements]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -580,12 +585,12 @@
       DTS:To="Package\DFT - STA Achievements" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
-<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
-<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -628,7 +633,7 @@
     design-time-name="Package\DFT - STA Achievements">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158,42"
           Id="Package\DFT - STA Achievements\OLE_DST - STA"
@@ -668,7 +673,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
