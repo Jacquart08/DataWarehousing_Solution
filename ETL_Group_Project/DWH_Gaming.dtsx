@@ -1,0 +1,3327 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/17/2025 6:58:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KILLIAN-PC"
+  DTS:CreatorName="KILLIAN-PC\killi"
+  DTS:DTSID="{2908E4D5-B06A-495E-BFB3-BFE57ECB48B7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{3A0233DF-CF93-4A0C-BE52-CD0ED287AAB3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - FACT_Gaming"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{8EB7B01C-F830-4A68-B4FC-5B95C06391BF}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - FACT_Gaming"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - FACT_Gaming\ALL - achievementKey"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="ALL - achievementKey"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 1].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[achievementid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 1].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[playerid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[playerid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 1].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[date_acquired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 1].Columns[achievementKey]"
+                      cachedDataType="i4"
+                      cachedName="achievementKey"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche avec correspondance].Columns[achievementKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 1].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche avec correspondance].Columns[gameid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 2]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 2].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[achievementid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 2].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[playerid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[playerid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 2].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[date_acquired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 2].Columns[achievementKey]"
+                      cachedDataType="i4"
+                      cachedName="achievementKey"
+                      lineageId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie de colonne dérivée].Columns[achievementKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementKey]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementid]"
+                      name="achievementid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[playerid]"
+                      name="playerid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[date_acquired]"
+                      name="date_acquired" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementKey]"
+                      name="achievementKey" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[gameid]"
+                      name="gameid" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\ALL - DateKey"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="ALL - DateKey"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1]"
+                  name="Unir tout entrée 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playerid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playerid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[date_acquired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[gameid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1].Columns[playersKey]"
+                      cachedDataType="i4"
+                      cachedName="playersKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playersKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playersKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1].Columns[achievementKey]"
+                      cachedDataType="i4"
+                      cachedName="achievementKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1].Columns[History_date]"
+                      cachedDataType="dbDate"
+                      cachedName="History_date"
+                      lineageId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie de conversion de données].Columns[History_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[History_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie de recherche avec correspondance].Columns[DateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[DateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playerid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playerid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[date_acquired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[gameid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1].Columns[playersKey]"
+                      cachedDataType="i4"
+                      cachedName="playersKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playersKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playersKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1].Columns[achievementKey]"
+                      cachedDataType="i4"
+                      cachedName="achievementKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1].Columns[History_date]"
+                      cachedDataType="dbDate"
+                      cachedName="History_date"
+                      lineageId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie de conversion de données].Columns[History_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[History_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      lineageId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie de colonne dérivée].Columns[DateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[DateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementid]"
+                      name="achievementid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playerid]"
+                      name="playerid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[date_acquired]"
+                      name="date_acquired" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[gameid]"
+                      name="gameid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playersKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playersKey]"
+                      name="playersKey" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementKey]"
+                      name="achievementKey" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[History_date]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[History_date]"
+                      name="History_date" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[DateKey]"
+                      name="DateKey" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\ALL - gameKey"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="ALL - gameKey"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1]"
+                  name="Unir tout entrée 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[achievementid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playerid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[playerid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[date_acquired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[gameid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1].Columns[playersKey]"
+                      cachedDataType="i4"
+                      cachedName="playersKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playersKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[playersKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1].Columns[achievementKey]"
+                      cachedDataType="i4"
+                      cachedName="achievementKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[achievementKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1].Columns[History_date]"
+                      cachedDataType="dbDate"
+                      cachedName="History_date"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[History_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[History_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[DateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[DateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1].Columns[gameKey]"
+                      cachedDataType="i4"
+                      cachedName="gameKey"
+                      lineageId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie de colonne dérivée].Columns[gameKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[gameKey]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[achievementid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playerid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[playerid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[date_acquired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[gameid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1].Columns[playersKey]"
+                      cachedDataType="i4"
+                      cachedName="playersKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[playersKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[playersKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1].Columns[achievementKey]"
+                      cachedDataType="i4"
+                      cachedName="achievementKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[achievementKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[achievementKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1].Columns[History_date]"
+                      cachedDataType="dbDate"
+                      cachedName="History_date"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[History_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[History_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[DateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[DateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1].Columns[gameKey]"
+                      cachedDataType="i4"
+                      cachedName="gameKey"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie de recherche avec correspondance].Columns[gameKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[gameKey]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[achievementid]"
+                      name="achievementid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[playerid]"
+                      name="playerid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[date_acquired]"
+                      name="date_acquired" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[gameid]"
+                      name="gameid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[playersKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[playersKey]"
+                      name="playersKey" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[achievementKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[achievementKey]"
+                      name="achievementKey" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[History_date]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[History_date]"
+                      name="History_date" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[gameKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[gameKey]"
+                      name="gameKey" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\ALL - playersKey"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="ALL - playersKey"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 2]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 2].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 2].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[playerid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playerid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 2].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[date_acquired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 2].Columns[playersKey]"
+                      cachedDataType="i4"
+                      cachedName="playersKey"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie de recherche avec correspondance].Columns[playersKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playersKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 2].Columns[achievementKey]"
+                      cachedDataType="i4"
+                      cachedName="achievementKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 2].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[gameid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 1].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 1].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[playerid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playerid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 1].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[date_acquired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 1].Columns[playersKey]"
+                      cachedDataType="i4"
+                      cachedName="playersKey"
+                      lineageId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie de colonne dérivée].Columns[playersKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playersKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 1].Columns[achievementKey]"
+                      cachedDataType="i4"
+                      cachedName="achievementKey"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[achievementKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 1].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[gameid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[gameid]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementid]"
+                      name="achievementid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playerid]"
+                      name="playerid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[date_acquired]"
+                      name="date_acquired" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[gameid]"
+                      name="gameid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playersKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[playersKey]"
+                      name="playersKey" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[achievementKey]"
+                      name="achievementKey" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\DER - achievementKey"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER - achievementKey"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\DER - achievementKey.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - FACT_Gaming\DER - achievementKey.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie de colonne dérivée].Columns[achievementKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie de colonne dérivée].Columns[achievementKey]"
+                      name="achievementKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">-1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">-1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - FACT_Gaming\DER - achievementKey.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\Der - DateKey"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Der - DateKey"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\Der - DateKey.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - FACT_Gaming\Der - DateKey.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie de colonne dérivée].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie de colonne dérivée].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">-1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">-1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - FACT_Gaming\Der - DateKey.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\DER - gameKey"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER - gameKey"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\DER - gameKey.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - FACT_Gaming\DER - gameKey.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie de colonne dérivée].Columns[gameKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie de colonne dérivée].Columns[gameKey]"
+                      name="gameKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">-1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">-1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - FACT_Gaming\DER - gameKey.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\DER - playersKey"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="DER - playersKey"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\DER - playersKey.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT - FACT_Gaming\DER - playersKey.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie de colonne dérivée].Columns[playersKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie de colonne dérivée].Columns[playersKey]"
+                      name="playersKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">-1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">-1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT - FACT_Gaming\DER - playersKey.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\History_date"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Conversion de données"
+              name="History_date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\History_date.Inputs[Entrée de conversion de données]"
+                  name="Entrée de conversion de données">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\History_date.Inputs[Entrée de conversion de données].Columns[date_acquired]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_acquired"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[date_acquired]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie de conversion de données]"
+                  exclusionGroup="1"
+                  name="Sortie de conversion de données"
+                  synchronousInputId="Package\DFT - FACT_Gaming\History_date.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie de conversion de données].Columns[History_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie de conversion de données].Columns[History_date]"
+                      name="History_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1].Columns[date_acquired]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie d'erreur de conversion de données]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de conversion de données"
+                  synchronousInputId="Package\DFT - FACT_Gaming\History_date.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\LKP - DateKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="LKP - DateKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Day" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DaySuffix" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Weekday" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekDayName" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WeekDayName_Short" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WeekDayName_FirstLetter" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DOWInMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayOfYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekOfMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MonthName_Short" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MonthName_FirstLetter" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="QuarterName" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MMYYYY" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MonthYear" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="IsWeekend" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\DFT - FACT_Gaming\History_date.Outputs[Sortie de conversion de données].Columns[History_date]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - FACT_Gaming\LKP - DateKey.Connections[OleDbConnection]"
+                  connectionManagerID="{B2FBF252-CDE6-4391-80D7-D7AEC8F0652D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_project_DWH]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\LKP - DateKey.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - DateKey.Inputs[Entrée de recherche].Columns[History_date]"
+                      cachedDataType="dbDate"
+                      cachedName="History_date"
+                      lineageId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie de conversion de données].Columns[History_date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - DateKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie de recherche avec correspondance].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie de recherche avec correspondance].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">DateKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - DateKey.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - DateKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\LKP - gameid"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="LKP - gameid"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimAchievements]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimAchievements]) [refTable]
+where [refTable].[achievementid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="achievementKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="achievementid" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="gameid" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="rarity" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="rarity_level" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[achievementid]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - FACT_Gaming\LKP - gameid.Connections[OleDbConnection]"
+                  connectionManagerID="{B2FBF252-CDE6-4391-80D7-D7AEC8F0652D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_project_DWH]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\LKP - gameid.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - gameid.Inputs[Entrée de recherche].Columns[achievementid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="achievementid"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[achievementid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">achievementid</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - gameid.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche avec correspondance].Columns[gameid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche avec correspondance].Columns[gameid]"
+                      name="gameid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">gameid</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche avec correspondance].Columns[achievementKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche avec correspondance].Columns[achievementKey]"
+                      name="achievementKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">achievementKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - gameid.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - gameid.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\LKP - gameKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="LKP - gameKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimGames]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimGames]) [refTable]
+where [refTable].[gameid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="gameKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="gameid" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="plateform" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="genres" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[gameid]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - FACT_Gaming\LKP - gameKey.Connections[OleDbConnection]"
+                  connectionManagerID="{B2FBF252-CDE6-4391-80D7-D7AEC8F0652D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_project_DWH]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\LKP - gameKey.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - gameKey.Inputs[Entrée de recherche].Columns[gameid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gameid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1].Columns[gameid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">gameid</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - gameKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie de recherche avec correspondance].Columns[gameKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie de recherche avec correspondance].Columns[gameKey]"
+                      name="gameKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">gameKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - gameKey.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - gameKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\LKP - playerid"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="LKP - playerid"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimPlayers]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimPlayers]) [refTable]
+where [refTable].[playerid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="playersKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nickname" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="playerid" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="country" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[playerid]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - FACT_Gaming\LKP - playerid.Connections[OleDbConnection]"
+                  connectionManagerID="{B2FBF252-CDE6-4391-80D7-D7AEC8F0652D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_project_DWH]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\LKP - playerid.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - playerid.Inputs[Entrée de recherche].Columns[playerid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="playerid"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1].Columns[playerid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">playerid</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - playerid.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie de recherche avec correspondance].Columns[playersKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie de recherche avec correspondance].Columns[playersKey]"
+                      name="playersKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">playersKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - playerid.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\DFT - FACT_Gaming\LKP - playerid.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="OLE_DST - FACT_Gaming"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[FACT_Gaming]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Connections[OleDbConnection]"
+                  connectionManagerID="{B2FBF252-CDE6-4391-80D7-D7AEC8F0652D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_project_DWH]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].Columns[achievementKey]"
+                      cachedDataType="i4"
+                      cachedName="achievementKey"
+                      externalMetadataColumnId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].ExternalColumns[achievementKey]"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[achievementKey]" />
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].Columns[playersKey]"
+                      cachedDataType="i4"
+                      cachedName="playersKey"
+                      externalMetadataColumnId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].ExternalColumns[playersKey]"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[playersKey]" />
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].ExternalColumns[DateKey]"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].Columns[gameKey]"
+                      cachedDataType="i4"
+                      cachedName="gameKey"
+                      externalMetadataColumnId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].ExternalColumns[gameKey]"
+                      lineageId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1].Columns[gameKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].ExternalColumns[achievementKey]"
+                      dataType="i4"
+                      name="achievementKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].ExternalColumns[playersKey]"
+                      dataType="i4"
+                      name="playersKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB].ExternalColumns[gameKey]"
+                      dataType="i4"
+                      name="gameKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="OLE_SRC - ODS_History"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[ODS_History]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Connections[OleDbConnection]"
+                  connectionManagerID="{B08C5560-4B96-4F04-A2B5-BF006330492B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ETL_project_ODS]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].ExternalColumns[achievementid]"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[achievementid]"
+                      name="achievementid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].ExternalColumns[playerid]"
+                      length="10"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[playerid]"
+                      name="playerid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].ExternalColumns[date_acquired]"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].Columns[date_acquired]"
+                      name="date_acquired"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].ExternalColumns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="achievementid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].ExternalColumns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="playerid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB].ExternalColumns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      name="date_acquired" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[achievementid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[achievementid]"
+                      name="achievementid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[playerid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[playerid]"
+                      name="playerid" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[date_acquired]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[date_acquired]"
+                      name="date_acquired" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de colonne dérivée]"
+              endId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - FACT_Gaming\DER - playersKey.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de colonne dérivée1]"
+              endId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 2]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - FACT_Gaming\DER - achievementKey.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de colonne dérivée2]"
+              endId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Entrée Union All 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - FACT_Gaming\Der - DateKey.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de colonne dérivée3]"
+              endId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Unir tout entrée 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT - FACT_Gaming\DER - gameKey.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de conversion de données]"
+              endId="Package\DFT - FACT_Gaming\LKP - DateKey.Inputs[Entrée de recherche]"
+              name="Sortie de conversion de données"
+              startId="Package\DFT - FACT_Gaming\History_date.Outputs[Sortie de conversion de données]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\DFT - FACT_Gaming\ALL - achievementKey.Inputs[Entrée Union All 1]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de recherche avec correspondance1]"
+              endId="Package\DFT - FACT_Gaming\ALL - playersKey.Inputs[Entrée Union All 2]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de recherche avec correspondance2]"
+              endId="Package\DFT - FACT_Gaming\ALL - DateKey.Inputs[Unir tout entrée 1]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de recherche avec correspondance3]"
+              endId="Package\DFT - FACT_Gaming\ALL - gameKey.Inputs[Entrée Union All 1]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de recherche sans correspondance3]"
+              endId="Package\DFT - FACT_Gaming\DER - gameKey.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\DFT - FACT_Gaming\LKP - gameKey.Outputs[Sortie de recherche sans correspondance]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de recherche sans correspondance1]"
+              endId="Package\DFT - FACT_Gaming\DER - achievementKey.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\DFT - FACT_Gaming\LKP - gameid.Outputs[Sortie de recherche sans correspondance]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de recherche sans correspondance2]"
+              endId="Package\DFT - FACT_Gaming\Der - DateKey.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\DFT - FACT_Gaming\LKP - DateKey.Outputs[Sortie de recherche sans correspondance]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de recherche sans correspondance]"
+              endId="Package\DFT - FACT_Gaming\DER - playersKey.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\DFT - FACT_Gaming\LKP - playerid.Outputs[Sortie de recherche sans correspondance]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Sortie de source OLE DB]"
+              endId="Package\DFT - FACT_Gaming\LKP - gameid.Inputs[Entrée de recherche]"
+              name="Sortie de source OLE DB"
+              startId="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Unir tout sortie 1]"
+              endId="Package\DFT - FACT_Gaming\History_date.Inputs[Entrée de conversion de données]"
+              name="Unir tout sortie 1"
+              startId="Package\DFT - FACT_Gaming\ALL - playersKey.Outputs[Unir tout sortie 1]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Unir tout sortie 11]"
+              endId="Package\DFT - FACT_Gaming\LKP - playerid.Inputs[Entrée de recherche]"
+              name="Unir tout sortie 1"
+              startId="Package\DFT - FACT_Gaming\ALL - achievementKey.Outputs[Unir tout sortie 1]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Unir tout sortie 12]"
+              endId="Package\DFT - FACT_Gaming\LKP - gameKey.Inputs[Entrée de recherche]"
+              name="Unir tout sortie 1"
+              startId="Package\DFT - FACT_Gaming\ALL - DateKey.Outputs[Unir tout sortie 1]" />
+            <path
+              refId="Package\DFT - FACT_Gaming.Paths[Unir tout sortie 13]"
+              endId="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming.Inputs[Entrée de destination OLE DB]"
+              name="Unir tout sortie 1"
+              startId="Package\DFT - FACT_Gaming\ALL - gameKey.Outputs[Unir tout sortie 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate FACT_Gaming"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{2CE3E5AA-5F24-4951-813C-5B36225EC88B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate FACT_Gaming"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B2FBF252-CDE6-4391-80D7-D7AEC8F0652D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.[FACT_Gaming]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{4564F39C-67E5-474D-8ED7-F2F0B2C8F01D}"
+      DTS:From="Package\SQL - Truncate FACT_Gaming"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\DFT - FACT_Gaming" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="183,42"
+          Id="Package\DFT - FACT_Gaming"
+          TopLeft="250.5,141.5" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\SQL - Truncate FACT_Gaming"
+          TopLeft="221.5,20.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="339.25,62.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - FACT_Gaming">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DFT - FACT_Gaming\DER - gameKey"
+          TopLeft="695.5,505.5" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History"
+          TopLeft="51.5,38.5" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\DFT - FACT_Gaming\History_date"
+          TopLeft="692.5,282.5" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\DFT - FACT_Gaming\LKP - gameid"
+          TopLeft="328.5,35.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DFT - FACT_Gaming\DER - playersKey"
+          TopLeft="585.5,190.5" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\DFT - FACT_Gaming\DER - achievementKey"
+          TopLeft="525.5,38.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\DFT - FACT_Gaming\LKP - gameKey"
+          TopLeft="496.5,506.5" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\DFT - FACT_Gaming\Der - DateKey"
+          TopLeft="477.5,360.5" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\DFT - FACT_Gaming\LKP - playerid"
+          TopLeft="394.5,189.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\DFT - FACT_Gaming\LKP - DateKey"
+          TopLeft="686.5,352.5" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\DFT - FACT_Gaming\ALL - achievementKey"
+          TopLeft="404.5,124.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DFT - FACT_Gaming\ALL - playersKey"
+          TopLeft="486.5,277.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT - FACT_Gaming\ALL - DateKey"
+          TopLeft="499.5,445.5" />
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Unir tout sortie 12]"
+          TopLeft="499.5,466.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-3,61"
+              Start="0,0"
+              End="-10.5,61">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-21.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.5,0"
+                    Point2="-25.5,0"
+                    Point3="-25.5,4" />
+                  <mssgle:LineSegment
+                    End="-25.5,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.5,57"
+                    Point2="-25.5,61"
+                    Point3="-21.5,61" />
+                  <mssgle:LineSegment
+                    End="-10.5,61" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Unir tout sortie 11]"
+          TopLeft="499,166.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30.5,23"
+              Start="0,0"
+              End="-30.5,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.5"
+                    Point2="0,11.5"
+                    Point3="-4,11.5" />
+                  <mssgle:LineSegment
+                    End="-26.5,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.5,11.5"
+                    Point2="-30.5,11.5"
+                    Point3="-30.5,15.5" />
+                  <mssgle:LineSegment
+                    End="-30.5,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Unir tout sortie 1]"
+          TopLeft="649.5,301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="43,0"
+              Start="0,0"
+              End="35.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de source OLE DB]"
+          TopLeft="255.5,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73,0"
+              Start="0,0"
+              End="65.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de recherche sans correspondance2]"
+          TopLeft="686.5,373.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-61,8"
+              Start="0,0"
+              End="-53.5,8">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-26.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.5,0"
+                    Point2="-30.5,0"
+                    Point3="-30.5,4" />
+                  <mssgle:LineSegment
+                    End="-30.5,4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.5,4"
+                    Point2="-30.5,8"
+                    Point3="-34.5,8" />
+                  <mssgle:LineSegment
+                    End="-53.5,8" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.00201171875,9,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de recherche sans correspondance1]"
+          TopLeft="473.5,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52,0"
+              Start="0,0"
+              End="44.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-69.25201171875,5,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="542.5,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="43,0"
+              Start="0,0"
+              End="35.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.75201171875,5,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de recherche avec correspondance2]"
+          TopLeft="762,394.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-163.833333333333,51"
+              Start="0,0"
+              End="-163.833333333333,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2770448548813" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2770448548813"
+                    Point2="0,30.2770448548813"
+                    Point3="-4,30.2770448548813" />
+                  <mssgle:LineSegment
+                    End="-159.833333333333,30.2770448548813" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-159.833333333333,30.2770448548813"
+                    Point2="-163.833333333333,30.2770448548813"
+                    Point3="-163.833333333333,34.2770448548813" />
+                  <mssgle:LineSegment
+                    End="-163.833333333333,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-173.593678385417,35.2770448548813,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de recherche avec correspondance1]"
+          TopLeft="468.5,231.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.5,46"
+              Start="0,0"
+              End="99.5,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="4,23" />
+                  <mssgle:LineSegment
+                    End="95.5,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.5,23"
+                    Point2="99.5,23"
+                    Point3="99.5,27" />
+                  <mssgle:LineSegment
+                    End="99.5,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.92701171875,28,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="401,77.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.8333333333333,47"
+              Start="0,0"
+              End="67.8333333333333,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9632738719832" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.9632738719832"
+                    Point2="0,27.9632738719832"
+                    Point3="4,27.9632738719832" />
+                  <mssgle:LineSegment
+                    End="63.8333333333333,27.9632738719832" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.8333333333333,27.9632738719832"
+                    Point2="67.8333333333333,27.9632738719832"
+                    Point3="67.8333333333333,31.9632738719832" />
+                  <mssgle:LineSegment
+                    End="67.8333333333333,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-57.7603450520834,32.9632738719832,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de conversion de données]"
+          TopLeft="762.5,324.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de colonne dérivée2]"
+          TopLeft="551.166666666667,402.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de colonne dérivée1]"
+          TopLeft="622,80.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-92.8333333333334,44"
+              Start="0,0"
+              End="-92.8333333333334,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1783840503673" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.1783840503673"
+                    Point2="0,26.1783840503673"
+                    Point3="-4,26.1783840503673" />
+                  <mssgle:LineSegment
+                    End="-88.8333333333334,26.1783840503673" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-88.8333333333334,26.1783840503673"
+                    Point2="-92.8333333333334,26.1783840503673"
+                    Point3="-92.8333333333334,30.1783840503673" />
+                  <mssgle:LineSegment
+                    End="-92.8333333333334,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de colonne dérivée]"
+          TopLeft="668.5,232.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-74.6666666666666,45"
+              Start="0,0"
+              End="-74.6666666666666,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.7375455650061" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.7375455650061"
+                    Point2="0,26.7375455650061"
+                    Point3="-4,26.7375455650061" />
+                  <mssgle:LineSegment
+                    End="-70.6666666666666,26.7375455650061" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.6666666666666,26.7375455650061"
+                    Point2="-74.6666666666666,26.7375455650061"
+                    Point3="-74.6666666666666,30.7375455650061" />
+                  <mssgle:LineSegment
+                    End="-74.6666666666666,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de recherche sans correspondance3]"
+          TopLeft="655.5,527">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40,0"
+              Start="0,0"
+              End="32.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-75.25201171875,5,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DFT - FACT_Gaming\ALL - gameKey"
+          TopLeft="525.5,602.5" />
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de colonne dérivée3]"
+          TopLeft="774.5,547.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-147,55"
+              Start="0,0"
+              End="-147,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6628352490421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.6628352490421"
+                    Point2="0,32.6628352490421"
+                    Point3="-4,32.6628352490421" />
+                  <mssgle:LineSegment
+                    End="-143,32.6628352490421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-143,32.6628352490421"
+                    Point2="-147,32.6628352490421"
+                    Point3="-147,36.6628352490421" />
+                  <mssgle:LineSegment
+                    End="-147,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Sortie de recherche avec correspondance3]"
+          TopLeft="577.25,548.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,17.4453125,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="212,42"
+          Id="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming"
+          TopLeft="217.5,573.5" />
+        <EdgeLayout
+          Id="Package\DFT - FACT_Gaming.Paths[Unir tout sortie 13]"
+          TopLeft="525.5,623.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96,-29"
+              Start="0,0"
+              End="-88.5,-29">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-44,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44,0"
+                    Point2="-48,0"
+                    Point3="-48,-4" />
+                  <mssgle:LineSegment
+                    End="-48,-25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48,-25"
+                    Point2="-48,-29"
+                    Point3="-52,-29" />
+                  <mssgle:LineSegment
+                    End="-88.5,-29" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - FACT_Gaming\OLE_SRC - ODS_History">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - FACT_Gaming\LKP - gameid">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAchievements]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - FACT_Gaming\LKP - gameKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimGames]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - FACT_Gaming\LKP - playerid">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPlayers]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - FACT_Gaming\LKP - DateKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - FACT_Gaming\OLE_DST - FACT_Gaming">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

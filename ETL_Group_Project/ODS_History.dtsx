@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="ODS_History"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{26759B1A-CC75-4CB7-B667-18A74AF0B46F}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{DE57FAFB-1DB4-4C11-86B0-AAF931C3B216}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -526,13 +526,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="202,42"
-          Id="Package\DFT - ODS_History\OLE_SRC - STA_History"
-          TopLeft="373.5,71.5" />
-        <NodeLayout
           Size="203,42"
           Id="Package\DFT - ODS_History\OLE_SRC - STA_Games"
           TopLeft="378.5,185.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\DFT - ODS_History\OLE_DST - ODS_History"
+          TopLeft="375,305" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\DFT - ODS_History\OLE_SRC - STA_History"
+          TopLeft="373.5,71.5" />
         <EdgeLayout
           Id="Package\DFT - ODS_History.Paths[Sortie de source OLE DB]"
           TopLeft="477.25,113.5">
@@ -555,10 +559,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="203,42"
-          Id="Package\DFT - ODS_History\OLE_DST - ODS_History"
-          TopLeft="375,305" />
         <EdgeLayout
           Id="Package\DFT - ODS_History.Paths[Sortie de conversion de données]"
           TopLeft="478.25,227.5">
@@ -585,7 +585,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS_History\OLE_SRC - STA_History">
+    design-time-name="Package\DFT - ODS_History\OLE_DST - ODS_History">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -598,7 +598,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS_History\OLE_DST - ODS_History">
+    design-time-name="Package\DFT - ODS_History\OLE_SRC - STA_History">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

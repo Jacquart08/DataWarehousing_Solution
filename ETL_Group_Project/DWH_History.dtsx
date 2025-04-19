@@ -866,21 +866,21 @@ where [refTable].[achievementid] = ?</property>
         <NodeLayout
           Size="211,42"
           Id="Package\SQL - Truncate DimHistory"
-          TopLeft="256.5,43.5" />
+          TopLeft="256.5,42.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte]"
-          TopLeft="361.75,85.5">
+          TopLeft="361.75,84.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="0,56"
               Start="0,0"
-              End="0,47.5">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1052,12 +1052,20 @@ where [refTable].[achievementid] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - DimHistory\LKP - History">
+    design-time-name="Package\DFT - DimHistory\OLE_DST - DimAchievements">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1067,7 +1075,7 @@ where [refTable].[achievementid] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1080,7 +1088,7 @@ where [refTable].[achievementid] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1090,6 +1098,11 @@ where [refTable].[achievementid] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
           type="q4:int">0</Value>
       </Property>
       <Property>
