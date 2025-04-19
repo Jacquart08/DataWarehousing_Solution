@@ -1,0 +1,155 @@
+-- Databases
+CREATE DATABASE ETL_project_STA;
+CREATE DATABASE ETL_project_ODS;
+CREATE DATABASE ETL_project_DWH;
+GO
+
+-- ------------------------------
+-- ETL_project_STA
+-- ------------------------------
+USE ETL_project_STA;
+GO
+
+CREATE TABLE [STA_Games] (
+   [gameid] VARCHAR(50),
+   [title] VARCHAR(50),
+   [platform] VARCHAR(50),
+   [genres] VARCHAR(50)
+);
+
+CREATE TABLE [STA_Prices] (
+   [gameid] VARCHAR(50),
+   [eur] VARCHAR(50),
+   [date_acquired] DATETIME
+);
+
+CREATE TABLE [STA_Purchase_games] (
+   [playerid] VARCHAR(50),
+   [gameid] VARCHAR(50)
+);
+
+CREATE TABLE [STA_Achievements] (
+   [achievementid] VARCHAR(50),
+   [gameid] VARCHAR(50),
+   [rarity] VARCHAR(50)
+);
+
+CREATE TABLE [STA_History] (
+   [achievementid] VARCHAR(50),
+   [playerid] VARCHAR(50),
+   [date_acquired] DATETIME
+);
+
+CREATE TABLE [STA_Players] (
+   [playerid] VARCHAR(50),
+   [nickname] VARCHAR(50),
+   [country] VARCHAR(50)
+);
+
+-- ------------------------------
+-- ETL_project_ODS
+-- ------------------------------
+USE ETL_project_ODS;
+GO
+
+CREATE TABLE [ODS_Achievements] (
+   [achievementid] varchar(50),
+   [gameid] varchar(50),
+   [rarity] varchar(50),
+   [rarity_level] numeric(18, 0)
+);
+
+CREATE TABLE [ODS_Games] (
+   [gameid] varchar(50),
+   [title] varchar(255),
+   [platform] varchar(50),
+   [genre] nvarchar(255)
+);
+
+CREATE TABLE [ODS_History] (
+   [achievementid] varchar(50),
+   [playerid] varchar(20),
+   [date_acquired] datetime
+);
+
+CREATE TABLE [ODS_Players] (
+   [nickname] varchar(255),
+   [playerid] varchar(20),
+   [country] varchar(60)
+);
+
+CREATE TABLE [ODS_Prices] (
+   [gameid] varchar(50),
+   [date_acquired] datetime,
+   [eur] NUMERIC(18, 2)
+);
+
+CREATE TABLE [ODS_Purchase_Games] (
+   [gameid] varchar(50),
+   [playerid] varchar(20),
+   [purchaseid] varchar(70)
+);
+
+-- ------------------------------
+-- ETL_project_DWH
+-- ------------------------------
+USE ETL_project_DWH;
+GO
+
+CREATE TABLE [DimAchievements] (
+   [achievementKey] int IDENTITY(1, 1) PRIMARY KEY,
+   [achievementid] varchar(50),
+   [gameid] varchar(50),
+   [rarity] varchar(50),
+   [rarity_level] int
+);
+
+CREATE TABLE [DimGames] (
+   [gameKey] int IDENTITY(1, 1) PRIMARY KEY,
+   [gameid] varchar(50),
+   [title] varchar(255),
+   [platform] varchar(50),
+   [genres] nvarchar(255)
+);
+
+CREATE TABLE [DimHistory] (
+   [historyKey] int IDENTITY(1, 1) PRIMARY KEY,
+   [achievementid] varchar(50),
+   [playerid] varchar(255),
+   [date_acquired] datetime
+);
+
+CREATE TABLE [DimPlayers] (
+   [playerKey] int IDENTITY(1, 1) PRIMARY KEY,
+   [nickname] varchar(255),
+   [playerid] varchar(20),
+   [country] varchar(60)
+);
+
+CREATE TABLE [DimPrices] (
+   [pricesKey] int IDENTITY(1, 1) PRIMARY KEY,
+   [gameid] varchar(50),
+   [eur] numeric(18, 2),
+   [date_acquired] datetime
+);
+
+CREATE TABLE [DimPurchase_Games] (
+   [purchaseGameKey] int IDENTITY(1, 1) PRIMARY KEY,
+   [gameid] varchar(50),
+   [playerid] varchar(50),
+   [purchaseid] varchar(70)
+);
+
+CREATE TABLE [FACT_Sales] (
+   [purchaseid] varchar(70),
+   [gameKey] int,
+   [playerKey] int,
+   [Purchased_Amount] numeric(18, 2)
+);
+
+CREATE TABLE [FACT_Gaming] (
+   [playerKey] int,
+   [achievementKey] int,
+   [DateKey] int,
+   [gameKey] int
+);
