@@ -20,34 +20,19 @@ To facilitate the understanding of the dataset, we provide below a comprehensive
 |                | Genres             | `VARCHAR(255)`      |                    |
 |                | Supported          | `BOOLEAN`           |                    |
 |                | Released_Dates     | `DATETIME`          |                    |
- 
----
- 
 | 🧑‍💻 **PLAYERS** | PlayerID           | `VARCHAR(20)`       | **PK**             |
 |                 | Nickname           | `VARCHAR(50)`       |                    |
-|                 | Country            | `VARCHAR(60)`       |                    |
- 
----
- 
+|                 | Country            | `VARCHAR(60)`       |                    | 
 | 🛒 **PURCHASED_GAMES** | PlayerID     | `VARCHAR(50)`       | **FK**             |
 |                        | Library      | `VARCHAR(255)`      |                    |
- 
----
- 
 | 💰 **PRICE**    | GameID             | `VARCHAR(50)`       | **FK**             |
 |                 | Eur                | `DT_NUM(18,2)`      |                    |
 |                 | Date_Acquired      | `DATETIME`          |                    |
- 
----
- 
 | 🏆 **ACHIEVEMENTS** | AchievementID  | `VARCHAR(50)`       | **Composite PK**   |
 |                     | GameID         | `VARCHAR(10)`       | **FK**             |
 |                     | Title          | `VARCHAR(255)`      |                    |
 |                     | Description    | `VARCHAR(255)`      |                    |
 |                     | Rarity         | `VARCHAR(20)`       |                    |
- 
----
- 
 | 📜 **HISTORY**  | PlayerID           | `VARCHAR(10)`       | **FK**             |
 |                 | AchievementID      | `VARCHAR(20)`       |                    |
 
